@@ -1,0 +1,67 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="09E1D680-8" name="DataTypes" version="1.0" notes="DataTypes"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="AbstractImplementationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="AutosarDataType" baseStereotypes="AutosarDataType"/>
+			<Stereotype name="ApplicationArrayDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationCompositeDatatype" baseStereotypes="ApplicationCompositeDatatype">
+				<TaggedValues>
+					<Tag name="dynamicArraySizeProfile" type="String" description="" unit="" values="" default=""/>
+					<Tag name="element" type="Classifier:element" description="" unit="ApplicationArrayElement" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ApplicationArrayElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="arraySizeHandling" type="enumeration" description="" unit="" values="" default=""/>
+					<Tag name="arraySizeSemantics" type="enumeration" description="" unit="" values="" default=""/>
+					<Tag name="indexDatatype" type="Classifier:indexDatatype" description="" unit="ApplicationPrimitiveDataType" values="" default=""/>
+					<Tag name="maxNumberOfElements" type="PositiveInteger" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ApplicationCompositeDatatype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationDataType" baseStereotypes="ApplicationDataType"/>
+			<Stereotype name="ApplicationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="AutosarDataType" baseStereotypes="AutosarDataType"/>
+			<Stereotype name="ApplicationPrimitiveDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationDataType" baseStereotypes="ApplicationDataType"/>
+			<Stereotype name="ApplicationRecordDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationCompositeDatatype" baseStereotypes="ApplicationCompositeDatatype">
+				<TaggedValues>
+					<Tag name="element" type="Classifier:element" description="" unit="ApplicationRecordElement" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ApplicationRecordElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="isOptional" type="boolean" description="" unit="" values="true,false" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="AutosarDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="SwDataDefProps" type="Classifier:SwDataDefProps" description="" unit="SwDataDefProps" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ImplementationDatatype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AbstractImplementationDataType" baseStereotypes="AbstractImplementationDataType"/>
+			<Stereotype name="SwDataDefProps" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

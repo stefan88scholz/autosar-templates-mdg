@@ -1,0 +1,39 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="15D07FE7-9" name="Constants" version="1.0" notes="Constants"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="AbstractRuleBasedValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="ApplicationValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="CompositeValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="ConstantReference" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="ConstantSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="valueSpec" type="Classifier:valueSpec" description="" unit="ValueSpecification" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="NotAvailableValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="NumericalValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="ReferenceValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="TextValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="ValueSpecification" notes="Base class for expressions leading to a value which can be used to initialize a data object." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="shortLabel" type="Identifier" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

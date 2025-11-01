@@ -1,0 +1,27 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="D068E0E1-C" name="PortPrototypes" version="1.0" notes="PortPrototypes"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="abstractprovidedportprototype" metatype="AbstractProvidedPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portprototype" baseStereotypes="portprototype"/>
+			<Stereotype name="abstractrequiredportprototype" metatype="AbstractRequiredPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portprototype" baseStereotypes="portprototype"/>
+			<Stereotype name="portprototype" metatype="PortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="pportprototype" metatype="PPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractprovidedportprototype" baseStereotypes="abstractprovidedportprototype"/>
+			<Stereotype name="prportprototype" metatype="PRPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractprovidedportprototype" baseStereotypes="abstractprovidedportprototype abstractrequiredportprototype"/>
+			<Stereotype name="rportprototype" metatype="RPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractrequiredportprototype" baseStereotypes="abstractrequiredportprototype">
+				<TaggedValues>
+					<Tag name="mayBeUnconnected" type="" description="" unit="" values="" default="false"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

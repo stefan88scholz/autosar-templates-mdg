@@ -1,0 +1,303 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<MDG.Technology version="1.0"><Documentation id="AR_R22_11" name="AUTOSAR" version="1.3" notes="AUTOSAR"/><UMLProfiles><UMLProfile profiletype="uml2">
+	<Documentation id="B9F35507-E" name="ConnectorExtensions" version="1.0" notes="ConnectorExtensions"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="isOfType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Association"/>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="15D07FE7-9" name="Constants" version="1.0" notes="Constants"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="AbstractRuleBasedValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="ApplicationValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="CompositeValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="ConstantReference" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="ConstantSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="valueSpec" type="Classifier:valueSpec" description="" unit="ValueSpecification" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="NotAvailableValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="NumericalValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="ReferenceValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="TextValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
+			<Stereotype name="ValueSpecification" notes="Base class for expressions leading to a value which can be used to initialize a data object." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="shortLabel" type="Identifier" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="6D083AB3-0" name="DataPrototypes" version="1.0" notes="DataPrototypes"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="ApplicationArrayElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationCompositeElementDataPrototype" baseStereotypes="ApplicationCompositeElementDataPrototype"/>
+			<Stereotype name="ApplicationCompositeElementDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="DataPrototype" baseStereotypes="DataPrototype"/>
+			<Stereotype name="ApplicationRecordElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationCompositeElementDataPrototype" baseStereotypes="ApplicationCompositeElementDataPrototype">
+				<TaggedValues>
+					<Tag name="isOptional" type="boolean" description="" unit="" values="true,false" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ArgumentDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AutosarDataPrototype" baseStereotypes="AutosarDataPrototype"/>
+			<Stereotype name="AutosarDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="DataPrototype" baseStereotypes="DataPrototype"/>
+			<Stereotype name="DataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="ParameterDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AutosarDataPrototype" baseStereotypes="AutosarDataPrototype"/>
+			<Stereotype name="Stereotype1" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0"/>
+			<Stereotype name="VariableDataPrototype" notes="A VariableDataPrototype represents a formalized generic piece of information that is typically mutable by the application software layer. VariableDataPrototype is used in various contexts and the specific context gives the otherwise generic VariableDataPrototype a dedicated semantics." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AutosarDataPrototype" baseStereotypes="AutosarDataPrototype"/>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="141C66B3-B" name="DataTypeMapping" version="1.0" notes="DataTypeMapping"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="DataTypeMap" notes=" This class represents the relationship between ApplicationDataType and its implementing Abstract&#xA;ImplementationDataType." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="applicationData" type="Classifier:applicationData" description="" unit="ApplicationDataType" values="" default=""/>
+					<Tag name="implementation" type="Classifier:implementation" description="" unit="AbstractImplementationDataType" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="DataTypeMappingSet" notes="This class represents a list of mappings between ApplicationDataTypes and ImplementationDataTypes.&#xA;In addition, it can contain mappings between ImplementationDataTypes and ModeDeclarationGroups." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="dataTypeMap" type="Classifier:dataTypeMap" description="This is one particular association between an ApplicationDataType and its AbstractImplementationDataType." unit="DataTypeMap" values="" default=""/>
+					<Tag name="modeRequest" type="Classifier:modeRequest" description=" This is one particular association between an ModeDeclarationGroup and its AbstractImplementationDataType." unit="ModeRequestTypeMap" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ModeDeclaration" notes=" Declaration of one Mode. The name and semantics of a specific mode is not defined in the meta-model." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="value" type="PositiveInteger" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ModeDeclarationGroup" notes=" A collection of Mode Declarations. Also, the initial mode is explicitly identified." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="initialMode" type="Classifier:initialMode" description="" unit="ModeDeclaration" values="" default=""/>
+					<Tag name="mode Declaration" type="Classifier:mode Declaration" description="" unit="ModeDeclaration" values="" default=""/>
+					<Tag name="modeManagerErrorBehavior" type="Classifier:modeManagerErrorBehavior" description="" unit="ModeErrorBehavior" values="" default=""/>
+					<Tag name="modeTransition" type="int" description="" unit="" values="" default=""/>
+					<Tag name="modeUserErrorBehavior" type="Classifier:modeUserErrorBehavior" description="" unit="ModeErrorBehavior" values="" default=""/>
+					<Tag name="onTransitionValue" type="PositiveInteger" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ModeErrorBehavior" notes=" This represents the ability to define the error behavior in the context of mode handling." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="defaultMode" type="Classifier:defaultMode" description="This represents the ModeDeclaration that is considered&#xA;the error mode in the context of the enclosing Mode&#xA;DeclarationGroup." unit="ModeDeclaration" values="" default=""/>
+					<Tag name="errorReactionPolicy" type="enumeration" description="This represents the ability to define the policy in terms of which default model shall apply in case an error occurs." unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ModeRequestTypeMap" notes="Specifies a mapping between a ModeDeclarationGroup and an ImplementationDataType&#xA;ImplementationDataType shall be used to implement the ModeDeclarationGroup." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="implementation DataType" type="Classifier:implementation DataType" description="This is the corresponding AbstractImplementationDataType. It shall be modeled along the idea of an &quot;unsigned integer-like&quot; data type." unit="AbstractImplementationDataType" values="" default=""/>
+					<Tag name="modeGroup" type="Classifier:modeGroup" description=" This is the corresponding ModeDeclarationGroup." unit="ModeDeclarationGroup" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ModeTransition" notes="This meta-class represents the ability to describe possible ModeTransitions in the context of a Mode&#xA;DeclarationGroup." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="enteredMode" type="Classifier:enteredMode" description="" unit="ModeDeclaration" values="" default=""/>
+					<Tag name="exitedMode" type="Classifier:exitedMode" description="" unit="ModeDeclaration" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="09E1D680-8" name="DataTypes" version="1.0" notes="DataTypes"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="AbstractImplementationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="AutosarDataType" baseStereotypes="AutosarDataType"/>
+			<Stereotype name="ApplicationArrayDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationCompositeDatatype" baseStereotypes="ApplicationCompositeDatatype">
+				<TaggedValues>
+					<Tag name="dynamicArraySizeProfile" type="String" description="" unit="" values="" default=""/>
+					<Tag name="element" type="Classifier:element" description="" unit="ApplicationArrayElement" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ApplicationArrayElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="arraySizeHandling" type="enumeration" description="" unit="" values="" default=""/>
+					<Tag name="arraySizeSemantics" type="enumeration" description="" unit="" values="" default=""/>
+					<Tag name="indexDatatype" type="Classifier:indexDatatype" description="" unit="ApplicationPrimitiveDataType" values="" default=""/>
+					<Tag name="maxNumberOfElements" type="PositiveInteger" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ApplicationCompositeDatatype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationDataType" baseStereotypes="ApplicationDataType"/>
+			<Stereotype name="ApplicationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="AutosarDataType" baseStereotypes="AutosarDataType"/>
+			<Stereotype name="ApplicationPrimitiveDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationDataType" baseStereotypes="ApplicationDataType"/>
+			<Stereotype name="ApplicationRecordDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationCompositeDatatype" baseStereotypes="ApplicationCompositeDatatype">
+				<TaggedValues>
+					<Tag name="element" type="Classifier:element" description="" unit="ApplicationRecordElement" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ApplicationRecordElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="isOptional" type="boolean" description="" unit="" values="true,false" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="AutosarDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="SwDataDefProps" type="Classifier:SwDataDefProps" description="" unit="SwDataDefProps" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ImplementationDatatype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AbstractImplementationDataType" baseStereotypes="AbstractImplementationDataType"/>
+			<Stereotype name="SwDataDefProps" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="C324609F-7" name="PortInterface" version="1.0" notes="PortInterface"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="ClientServerInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portinterface" baseStereotypes="portinterface"/>
+			<Stereotype name="DataInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portinterface" baseStereotypes="portinterface"/>
+			<Stereotype name="InvalidationPolicy" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="MetaDataItemSet" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="ModeSwitchInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portinterface" baseStereotypes="portinterface"/>
+			<Stereotype name="NvDataInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="DataInterface" baseStereotypes="DataInterface"/>
+			<Stereotype name="ParameterInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="DataInterface" baseStereotypes="DataInterface"/>
+			<Stereotype name="portinterface" metatype="PortInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="SenderReceiverInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="DataInterface" baseStereotypes="DataInterface">
+				<TaggedValues>
+					<Tag name="dataElement" type="Classifier:dataElement" description="" unit="variabledataprototype" values="" default=""/>
+					<Tag name="InvalidationPolicy" type="Classifier:InvalidationPolicy" description="" unit="InvalidationPolicy" values="" default=""/>
+					<Tag name="MetaDataItemSet" type="Classifier:MetaDataItemSet" description="" unit="MetaDataItemSet" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="TriggerInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portinterface" baseStereotypes="portinterface"/>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="D068E0E1-C" name="PortPrototypes" version="1.0" notes="PortPrototypes"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="abstractprovidedportprototype" metatype="AbstractProvidedPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portprototype" baseStereotypes="portprototype"/>
+			<Stereotype name="abstractrequiredportprototype" metatype="AbstractRequiredPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portprototype" baseStereotypes="portprototype"/>
+			<Stereotype name="portprototype" metatype="PortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="pportprototype" metatype="PPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractprovidedportprototype" baseStereotypes="abstractprovidedportprototype"/>
+			<Stereotype name="prportprototype" metatype="PRPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractprovidedportprototype" baseStereotypes="abstractprovidedportprototype abstractrequiredportprototype"/>
+			<Stereotype name="rportprototype" metatype="RPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractrequiredportprototype" baseStereotypes="abstractrequiredportprototype">
+				<TaggedValues>
+					<Tag name="mayBeUnconnected" type="" description="" unit="" values="" default="false"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile></UMLProfiles></MDG.Technology>

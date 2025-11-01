@@ -1,0 +1,30 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="6D083AB3-0" name="DataPrototypes" version="1.0" notes="DataPrototypes"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="applicationarrayelement" metatype="ApplicationArrayElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="applicationcompositeelementdataprototype" baseStereotypes="applicationcompositeelementdataprototype"/>
+			<Stereotype name="applicationcompositeelementdataprototype" metatype="ApplicationCompositeElementDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="dataprototype" baseStereotypes="dataprototype"/>
+			<Stereotype name="applicationrecordelement" metatype="ApplicationRecordElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="applicationcompositeelementdataprototype" baseStereotypes="applicationcompositeelementdataprototype">
+				<TaggedValues>
+					<Tag name="isOptional" type="boolean" description="" unit="" values="true,false" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="argumentdataprototype" metatype="ArgumentDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardataprototype" baseStereotypes="autosardataprototype"/>
+			<Stereotype name="autosardataprototype" metatype="AutosarDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="dataprototype" baseStereotypes="dataprototype"/>
+			<Stereotype name="dataprototype" metatype="DataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="parameterdataprototype" metatype="ParameterDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardataprototype" baseStereotypes="autosardataprototype"/>
+			<Stereotype name="Stereotype1" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0"/>
+			<Stereotype name="variabledataprototype" metatype="VariableDataPrototype" notes="A VariableDataPrototype represents a formalized generic piece of information that is typically mutable by the application software layer. VariableDataPrototype is used in various contexts and the specific context gives the otherwise generic VariableDataPrototype a dedicated semantics." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardataprototype" baseStereotypes="autosardataprototype"/>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>
