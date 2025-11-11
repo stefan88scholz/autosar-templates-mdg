@@ -3,14 +3,14 @@
 	<Documentation id="09E1D680-8" name="DataTypes" version="1.0" notes="DataTypes"/>
 	<Content>
 		<Stereotypes>
-			<Stereotype name="AbstractImplementationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="AutosarDataType" baseStereotypes="AutosarDataType"/>
-			<Stereotype name="ApplicationArrayDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationCompositeDatatype" baseStereotypes="ApplicationCompositeDatatype">
+			<Stereotype name="abstractimplementationdatatype" metatype="AbstractImplementationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardatatype" baseStereotypes="autosardatatype"/>
+			<Stereotype name="applicationarraydatatype" metatype="ApplicationArrayDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="applicationcompositedatatype" baseStereotypes="applicationcompositedatatype">
 				<TaggedValues>
 					<Tag name="dynamicArraySizeProfile" type="String" description="" unit="" values="" default=""/>
-					<Tag name="element" type="Classifier:element" description="" unit="ApplicationArrayElement" values="" default=""/>
+					<Tag name="element" type="Classifier:element" description="" unit="applicationarrayelement" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="ApplicationArrayElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="applicationarrayelement" metatype="ApplicationArrayElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
@@ -19,19 +19,19 @@
 				<TaggedValues>
 					<Tag name="arraySizeHandling" type="enumeration" description="" unit="" values="" default=""/>
 					<Tag name="arraySizeSemantics" type="enumeration" description="" unit="" values="" default=""/>
-					<Tag name="indexDatatype" type="Classifier:indexDatatype" description="" unit="ApplicationPrimitiveDataType" values="" default=""/>
+					<Tag name="indexDatatype" type="Classifier:indexDatatype" description="" unit="applicationprimitivedatatype" values="" default=""/>
 					<Tag name="maxNumberOfElements" type="PositiveInteger" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="ApplicationCompositeDatatype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationDataType" baseStereotypes="ApplicationDataType"/>
-			<Stereotype name="ApplicationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="AutosarDataType" baseStereotypes="AutosarDataType"/>
-			<Stereotype name="ApplicationPrimitiveDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationDataType" baseStereotypes="ApplicationDataType"/>
-			<Stereotype name="ApplicationRecordDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ApplicationCompositeDatatype" baseStereotypes="ApplicationCompositeDatatype">
+			<Stereotype name="applicationcompositedatatype" metatype="ApplicationCompositeDatatype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="applicationdatatype" baseStereotypes="applicationdatatype"/>
+			<Stereotype name="applicationdatatype" metatype="ApplicationDataType" notes="ApplicationDataType defines a data type from the application point of view. Especially it should be used whenever something &quot;physical&quot; is at stake.&#xA;&#xA;An ApplicationDataType represents a set of values as seen in the application model, such as measurement units. It does not consider implementation details such as bit-size, endianess, etc.&#xA;&#xA;It should be possible to model the application level aspects of a VFB system by using ApplicationDataTypes only." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardatatype" baseStereotypes="autosardatatype"/>
+			<Stereotype name="applicationprimitivedatatype" metatype="ApplicationPrimitiveDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="applicationdatatype" baseStereotypes="applicationdatatype"/>
+			<Stereotype name="applicationrecorddatatype" metatype="ApplicationRecordDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="applicationcompositedatatype" baseStereotypes="applicationcompositedatatype">
 				<TaggedValues>
-					<Tag name="element" type="Classifier:element" description="" unit="ApplicationRecordElement" values="" default=""/>
+					<Tag name="element" type="Classifier:element" description="" unit="applicationrecordelement" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="ApplicationRecordElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="applicationrecordelement" metatype="ApplicationRecordElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
@@ -41,7 +41,7 @@
 					<Tag name="isOptional" type="boolean" description="" unit="" values="true,false" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="AutosarDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+			<Stereotype name="autosardatatype" metatype="AutosarDataType" notes="Abstract base class for user defined AUTOSAR data types for software." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
@@ -51,7 +51,17 @@
 					<Tag name="SwDataDefProps" type="Classifier:SwDataDefProps" description="" unit="SwDataDefProps" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="ImplementationDatatype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AbstractImplementationDataType" baseStereotypes="AbstractImplementationDataType"/>
+			<Stereotype name="implementationdatatype" metatype="ImplementationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractimplementationdatatype" baseStereotypes="abstractimplementationdatatype"/>
+			<Stereotype name="implementationprops" metatype="ImplementationProps" notes="Defines a symbol to be used as (depending on the concrete case) either a complete replacement or a prefix when generating code artifacts." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="symbol" type=" CIdentifier" description="The symbol to be used as (depending on the concrete case) either a complete replacement or a prefix." unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
 			<Stereotype name="SwDataDefProps" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
@@ -59,6 +69,8 @@
 					</Apply>
 				</AppliesTo>
 			</Stereotype>
+			<Stereotype name="symbolicnameprops" metatype="SymbolicNameProps" notes="This meta-class can be taken to contribute to the creation of symbolic name values." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="implementationprops" baseStereotypes="implementationprops"/>
+			<Stereotype name="symbolprops" metatype="SymbolProps" notes=" This meta-class represents the ability to attach with the symbol attribute a symbolic name that is conform to C language requirements to another meta-class, e.g. AtomicSwComponentType, that is a potential subject to a name clash on the level of RTE source code." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="implementationprops" baseStereotypes="implementationprops"/>
 		</Stereotypes>
 		<TaggedValueTypes/>
 		<ViewDefinitions/>

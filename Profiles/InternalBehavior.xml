@@ -1,0 +1,23 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="7FCC99C8-F" name="InternalBehavior" version="1.0" notes="InternalBehavior"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="bswinternalbehavior" metatype="BswInternalBehavior" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="internalbehavior" baseStereotypes="internalbehavior"/>
+			<Stereotype name="internalbehavior" metatype="InternalBehavior" notes="Common base class (abstract) for the internal behavior of both software components and basic software modules/clusters." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="staticMemory" type="Classifier:staticMemory" description="Describes a read and writeable static memory object representing measurerment variables implemented by&#xA;this software component. The term &quot;static&quot; is used in the meaning of &quot;non-temporary&quot; and does not necessarily specify a linker encapsulation. This kind of memory is only supported if supportsMultipleInstantiation is FALSE.&#xA;&#xA;The shortName of the VariableDataPrototype has to be equal with the ”C’ identifier of the described variable.&#xA;&#xA;The aggregation of staticMemory is subject to variability&#xA;with the purpose to support variability in the software component’s implementations.&#xA;&#xA;Typically different algorithms in the implementation are requiring different number of memory objects." unit="variabledataprototype" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="swcinternalbehavior" metatype="SwcInternalBehavior" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="internalbehavior" baseStereotypes="internalbehavior"/>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

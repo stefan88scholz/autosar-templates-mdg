@@ -3,9 +3,9 @@
 	<Documentation id="D068E0E1-C" name="PortPrototypes" version="1.0" notes="PortPrototypes"/>
 	<Content>
 		<Stereotypes>
-			<Stereotype name="abstractprovidedportprototype" metatype="AbstractProvidedPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portprototype" baseStereotypes="portprototype"/>
-			<Stereotype name="abstractrequiredportprototype" metatype="AbstractRequiredPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portprototype" baseStereotypes="portprototype"/>
-			<Stereotype name="portprototype" metatype="PortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+			<Stereotype name="abstractprovidedportprototype" metatype="AbstractProvidedPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portprototype" baseStereotypes="portprototype"/>
+			<Stereotype name="abstractrequiredportprototype" metatype="AbstractRequiredPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portprototype" baseStereotypes="portprototype"/>
+			<Stereotype name="portprototype" metatype="PortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>

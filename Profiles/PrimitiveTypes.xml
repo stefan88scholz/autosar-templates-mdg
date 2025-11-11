@@ -1,0 +1,10 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="EADE8AFD-F" name="PrimitiveTypes" version="1.0" notes="PrimitiveTypes"/>
+	<Content>
+		<Stereotypes/>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

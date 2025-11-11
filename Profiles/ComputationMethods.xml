@@ -1,0 +1,102 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="234CF34A-7" name="ComputationMethods" version="1.0" notes="ComputationMethods"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="compu" metatype="Compu" notes="This meta-class represents the ability to express one particular computation" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="compuContent" type="Classifier:compuContent" description="This specifies the details of the computation." unit="compucontent" values="" default=""/>
+					<Tag name="compuDefaultValue" type="Classifier:compuDefaultValue" description=" This property can be used to specify an output value for a conversion formula, if the value to be converted lies outside the plausibility limit. Although this is possible for all conversion formulae, it is especially valid for variables with tabular conversion formulae." unit="compuconst" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="compuconst" metatype="CompuConst" notes="This meta-class represents the fact that the value of a computation method scale is constant." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="compuConstContentType" type="CompuConstContent" description="This is the actual content of the constant compu method&#xA;scale." unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="compucontent" metatype="CompuContent" notes="This abstract meta-class represents the various definition means of a computation method." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="compumethod" metatype="CompuMethod" notes=" This meta-class represents the ability to express the relationship between a physical value and the mathematical representation.&#xA;&#xA;Note that this is still independent of the technical implementation in data types. It only specifies the formula how the internal value corresponds to its physical pendant.&#xA;&#xA;Tags:atp.recommendedPackage=CompuMethods" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="compuInternalToPhys" type="Classifier:compuInternalToPhys" description=" This specifies the computation from internal values to physical values." unit="compu" values="" default=""/>
+					<Tag name="compuPhysToInternal" type="Classifier:compuPhysToInternal" description=" This represents the computation from physical values to&#xA;the internal values." unit="compu" values="" default=""/>
+					<Tag name="displayFormat" type=" DisplayFormatString" description="" unit="" values="" default=""/>
+					<Tag name="unit" type="Classifier:unit" description="" unit="unit" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="compunominatordenominator" metatype="CompuNominatorDenominator" notes="This class represents the ability to express a polynomial either as Nominator or as Denominator." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="v" type="Numerical" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="compurationalcoeffs" metatype="CompuRationalCoeffs" notes="This meta-class represents the ability to express a rational function by specifying the coefficients of nominator and denominator." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="compuDenominator" type="Classifier:compuDenominator" description="This is the denominator of the expression." unit="compunominatordenominator" values="" default=""/>
+					<Tag name="compuNumerator" type="Classifier:compuNumerator" description="This is the numerator of the rational expression" unit="compunominatordenominator" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="compuscale" metatype="CompuScale" notes=" This meta-class represents the ability to specify one segment of a segmented computation method." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="compuInverseValue" type="Classifier:compuInverseValue" description=" This is the inverse value of the constraint. This supports the case that the scale is not reversible per se." unit="compuconst" values="" default=""/>
+					<Tag name="compuScaleContents" type="Classifier:compuScaleContents" description="This represents the computation details of the scale." unit="compuscalecontents" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="compuscaleconstantcontents" metatype="CompuScaleConstantContents" notes="This meta-class represents the fact that a particular scale of the computation method is constant." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="compuscalecontents" baseStereotypes="compuscalecontents">
+				<TaggedValues>
+					<Tag name="compuConst" type="Classifier:compuConst" description="" unit="compuconst" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="compuscalecontents" metatype="CompuScaleContents" notes="This abstract meta-class represents the content of one particular scale." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="compuscalerationalformula" metatype="CompuScaleRationalFormula" notes="This meta-class represents the fact that the computation in this scale is represented as rational term." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="compuscalecontents" baseStereotypes="compuscalecontents"/>
+			<Stereotype name="compuscales" metatype="CompuScales" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="compucontent" baseStereotypes="compucontent">
+				<TaggedValues>
+					<Tag name="compuScale" type="Classifier:compuScale" description="This represents one scale within the compu method.&#xA;&#xA;Note that it contains a Variationpoint in order to support blueprints of enumerations." unit="compuscale" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

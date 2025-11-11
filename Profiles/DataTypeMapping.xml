@@ -3,29 +3,29 @@
 	<Documentation id="141C66B3-B" name="DataTypeMapping" version="1.0" notes="DataTypeMapping"/>
 	<Content>
 		<Stereotypes>
-			<Stereotype name="DataTypeMap" notes=" This class represents the relationship between ApplicationDataType and its implementing Abstract&#xA;ImplementationDataType." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="datatypemap" metatype="DataTypeMap" notes="This class represents the relationship between ApplicationDataType and its implementing AbstractImplementationDataType." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="applicationData" type="Classifier:applicationData" description="" unit="ApplicationDataType" values="" default=""/>
-					<Tag name="implementation" type="Classifier:implementation" description="" unit="AbstractImplementationDataType" values="" default=""/>
+					<Tag name="applicationData" type="Classifier:applicationData" description="This is the corresponding ApplicationDataType" unit="applicationdatatype" values="" default=""/>
+					<Tag name="implementation" type="Classifier:implementation" description="This is the corresponding AbstractImplementationDataType." unit="abstractimplementationdatatype" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="DataTypeMappingSet" notes="This class represents a list of mappings between ApplicationDataTypes and ImplementationDataTypes.&#xA;In addition, it can contain mappings between ImplementationDataTypes and ModeDeclarationGroups." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="datatypemappingset" metatype="DataTypeMappingSet" notes="This class represents a list of mappings between ApplicationDataTypes and ImplementationDataTypes.&#xA;In addition, it can contain mappings between ImplementationDataTypes and ModeDeclarationGroups." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="dataTypeMap" type="Classifier:dataTypeMap" description="This is one particular association between an ApplicationDataType and its AbstractImplementationDataType." unit="DataTypeMap" values="" default=""/>
-					<Tag name="modeRequest" type="Classifier:modeRequest" description=" This is one particular association between an ModeDeclarationGroup and its AbstractImplementationDataType." unit="ModeRequestTypeMap" values="" default=""/>
+					<Tag name="dataTypeMap" type="Classifier:dataTypeMap" description="This is one particular association between an ApplicationDataType and its AbstractImplementationDataType." unit="datatypemap" values="" default=""/>
+					<Tag name="modeRequest" type="Classifier:modeRequest" description=" This is one particular association between an ModeDeclarationGroup and its AbstractImplementationDataType." unit="moderequesttypemap" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="ModeDeclaration" notes=" Declaration of one Mode. The name and semantics of a specific mode is not defined in the meta-model." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="modedeclaration" metatype="ModeDeclaration" notes=" Declaration of one Mode. The name and semantics of a specific mode is not defined in the meta-model." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
@@ -35,52 +35,52 @@
 					<Tag name="value" type="PositiveInteger" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="ModeDeclarationGroup" notes=" A collection of Mode Declarations. Also, the initial mode is explicitly identified." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="modedeclarationgroup" metatype="ModeDeclarationGroup" notes=" A collection of Mode Declarations. Also, the initial mode is explicitly identified." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="initialMode" type="Classifier:initialMode" description="" unit="ModeDeclaration" values="" default=""/>
-					<Tag name="mode Declaration" type="Classifier:mode Declaration" description="" unit="ModeDeclaration" values="" default=""/>
-					<Tag name="modeManagerErrorBehavior" type="Classifier:modeManagerErrorBehavior" description="" unit="ModeErrorBehavior" values="" default=""/>
+					<Tag name="initialMode" type="Classifier:initialMode" description="" unit="modedeclaration" values="" default=""/>
+					<Tag name="mode Declaration" type="Classifier:mode Declaration" description="" unit="modedeclaration" values="" default=""/>
+					<Tag name="modeManagerErrorBehavior" type="Classifier:modeManagerErrorBehavior" description="" unit="modeerrorbehavior" values="" default=""/>
 					<Tag name="modeTransition" type="int" description="" unit="" values="" default=""/>
-					<Tag name="modeUserErrorBehavior" type="Classifier:modeUserErrorBehavior" description="" unit="ModeErrorBehavior" values="" default=""/>
+					<Tag name="modeUserErrorBehavior" type="Classifier:modeUserErrorBehavior" description="" unit="modeerrorbehavior" values="" default=""/>
 					<Tag name="onTransitionValue" type="PositiveInteger" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="ModeErrorBehavior" notes=" This represents the ability to define the error behavior in the context of mode handling." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="modeerrorbehavior" metatype="ModeErrorBehavior" notes=" This represents the ability to define the error behavior in the context of mode handling." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="defaultMode" type="Classifier:defaultMode" description="This represents the ModeDeclaration that is considered&#xA;the error mode in the context of the enclosing Mode&#xA;DeclarationGroup." unit="ModeDeclaration" values="" default=""/>
-					<Tag name="errorReactionPolicy" type="enumeration" description="This represents the ability to define the policy in terms of which default model shall apply in case an error occurs." unit="" values="" default=""/>
+					<Tag name="defaultMode" type="Classifier:defaultMode" description="This represents the ModeDeclaration that is considered&#xA;the error mode in the context of the enclosing Mode&#xA;DeclarationGroup." unit="modedeclaration" values="" default=""/>
+					<Tag name="errorReactionPolicy" type="Classifier:errorReactionPolicy" description="This represents the ability to define the policy in terms of which default model shall apply in case an error occurs." unit="modedeclaration" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="ModeRequestTypeMap" notes="Specifies a mapping between a ModeDeclarationGroup and an ImplementationDataType&#xA;ImplementationDataType shall be used to implement the ModeDeclarationGroup." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="moderequesttypemap" metatype="ModeRequestTypeMap" notes="Specifies a mapping between a ModeDeclarationGroup and an ImplementationDataType&#xA;ImplementationDataType shall be used to implement the ModeDeclarationGroup." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="implementation DataType" type="Classifier:implementation DataType" description="This is the corresponding AbstractImplementationDataType. It shall be modeled along the idea of an &quot;unsigned integer-like&quot; data type." unit="AbstractImplementationDataType" values="" default=""/>
-					<Tag name="modeGroup" type="Classifier:modeGroup" description=" This is the corresponding ModeDeclarationGroup." unit="ModeDeclarationGroup" values="" default=""/>
+					<Tag name="implementation DataType" type="Classifier:implementation DataType" description="This is the corresponding AbstractImplementationDataType. It shall be modeled along the idea of an &quot;unsigned integer-like&quot; data type." unit="abstractimplementationdatatype" values="" default=""/>
+					<Tag name="modeGroup" type="Classifier:modeGroup" description=" This is the corresponding ModeDeclarationGroup." unit="modedeclarationgroup" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="ModeTransition" notes="This meta-class represents the ability to describe possible ModeTransitions in the context of a Mode&#xA;DeclarationGroup." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="modetransition" metatype="ModeTransition" notes="This meta-class represents the ability to describe possible ModeTransitions in the context of a Mode&#xA;DeclarationGroup." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="enteredMode" type="Classifier:enteredMode" description="" unit="ModeDeclaration" values="" default=""/>
-					<Tag name="exitedMode" type="Classifier:exitedMode" description="" unit="ModeDeclaration" values="" default=""/>
+					<Tag name="enteredMode" type="Classifier:enteredMode" description="" unit="modedeclaration" values="" default=""/>
+					<Tag name="exitedMode" type="Classifier:exitedMode" description="" unit="modedeclaration" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
 		</Stereotypes>

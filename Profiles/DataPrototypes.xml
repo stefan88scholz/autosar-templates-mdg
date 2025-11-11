@@ -4,15 +4,15 @@
 	<Content>
 		<Stereotypes>
 			<Stereotype name="applicationarrayelement" metatype="ApplicationArrayElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="applicationcompositeelementdataprototype" baseStereotypes="applicationcompositeelementdataprototype"/>
-			<Stereotype name="applicationcompositeelementdataprototype" metatype="ApplicationCompositeElementDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="dataprototype" baseStereotypes="dataprototype"/>
+			<Stereotype name="applicationcompositeelementdataprototype" metatype="ApplicationCompositeElementDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="dataprototype" baseStereotypes="dataprototype"/>
 			<Stereotype name="applicationrecordelement" metatype="ApplicationRecordElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="applicationcompositeelementdataprototype" baseStereotypes="applicationcompositeelementdataprototype">
 				<TaggedValues>
 					<Tag name="isOptional" type="boolean" description="" unit="" values="true,false" default=""/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="argumentdataprototype" metatype="ArgumentDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardataprototype" baseStereotypes="autosardataprototype"/>
-			<Stereotype name="autosardataprototype" metatype="AutosarDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="dataprototype" baseStereotypes="dataprototype"/>
-			<Stereotype name="dataprototype" metatype="DataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+			<Stereotype name="autosardataprototype" metatype="AutosarDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="dataprototype" baseStereotypes="dataprototype"/>
+			<Stereotype name="dataprototype" metatype="DataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>

@@ -1,0 +1,71 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="BDDD1FC8-4" name="PhyiscalSemanticsUnitGroups" version="1.0" notes="PhyiscalSemanticsUnitGroups"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="physicaldimension" metatype="PhysicalDimension" notes="This class represents a physical dimension. If the physical dimension of two units is identical, then a conversion between them is possible. The conversion between units is related to the definition of the physical dimension.&#xA;&#xA;Note that the equivalence of the exponents does not per se define the convertibility. For example Energy and Torque share the same exponents (Nm).&#xA;&#xA;Please note further the value of an exponent does not necessarily have to be an integer number. It is also possible that the value yields a rational number, e.g. to compute the square root of a given physical quantity. In this case the exponent value would be a rational number where the numerator value is 1 and the denominator value is 2." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="currentExp" type="Numerical" description="This attribute represents the exponent of the physical dimension &quot;electric current&quot;." unit="" values="" default=""/>
+					<Tag name="lengthExp" type="Numerical" description="The exponent of the physical dimension &quot;length&quot;." unit="" values="" default=""/>
+					<Tag name="luminousIntensityExp" type="Numerical" description="The exponent of the physical dimension &quot;luminous intensity&quot;." unit="" values="" default=""/>
+					<Tag name="massExp" type="Numerical" description="The exponent of the physical dimension &quot;mass&quot;." unit="" values="" default=""/>
+					<Tag name="molarAmountExp" type="Numerical" description="The exponent of the physical dimension &quot;quantity of substance&quot;." unit="" values="" default=""/>
+					<Tag name="temperatureExp" type="Numerical" description=" The exponent of the physical dimension &quot;temperature&quot;." unit="" values="" default=""/>
+					<Tag name="timeExp" type="Numerical" description=" The exponent of the physical dimension &quot;time&quot;." unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="physicaldimensionmapping" metatype="PhysicalDimensionMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="firstPhysicalDimension" type="Classifier:firstPhysicalDimension" description="This represents the first PhysicalDimension of the enclosing PhysicalDimensionMapping." unit="physicaldimension" values="" default=""/>
+					<Tag name="secondPhysicalDimension" type="Classifier:secondPhysicalDimension" description=" This represents the first PhysicalDimension of the enclosing PhysicalDimensionMapping." unit="physicaldimension" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="physicaldimensionmappingset" metatype="PhysicalDimensionMappingSet" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="phyiscalDimensionMapping" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="unit" metatype="Unit" notes="This is a physical measurement unit. All units that might be defined should stem from SI units. In order to convert one unit into another factor and offset are defined.&#xA;For the calculation from SI-unit to the defined unit the factor (factorSiToUnit ) and the offset (offsetSiToUnit ) are applied as follows:&#xA;&#xA;x [{unit}] := y * [{siUnit}] * factorSiToUnit [[unit]/{siUnit}] + offsetSiToUnit [{unit}]&#xA;&#xA;For the calculation from a unit to SI-unit the reciprocal of the factor (factorSiToUnit ) and the negation of the offset (offsetSiToUnit ) are applied.&#xA;&#xA;y {siUnit} := (x*{unit} - offsetSiToUnit [{unit}]) / (factorSiToUnit [[unit]/{siUnit}]&#xA;&#xA;Tags:atp.recommendedPackage=Units" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="displayName" type="SingleLanguageUnitNames" description=" This specifies how the unit shall be displayed in documents or in user interfaces of tools.The displayName corresponds to the Unit.Display in an ASAM MCD-2MC file." unit="" values="" default=""/>
+					<Tag name="factorSiToUnit" type="Float" description="This is the factor for the conversion from SI Units to units.&#xA;The inverse is used for conversion from units to SI Units." unit="" values="" default=""/>
+					<Tag name="offsetSiToUnit" type="Float" description=" This is the offset for the conversion from and to siUnits." unit="" values="" default=""/>
+					<Tag name="phyiscalDimension" type="Classifier:phyiscalDimension" description="This association represents the physical dimension to which the unit belongs to. Note that only values with units of the same physical dimensions might be converted." unit="physicaldimension" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="unitgroup" metatype="UnitGroup" notes=" This meta-class represents the ability to specify a logical grouping of units.The category denotes the unit system that the referenced units are associated to.&#xA;&#xA;In this way, e.g. country-specific unit systems (CATEGORY=&quot;COUNTRY&quot;) can be defined as well as&#xA;specific unit systems for certain application domains.&#xA;&#xA;In the same way a group of equivalent units, can be defined which are used in different countries, by&#xA;setting CATEGORY=&quot;EQUIV_UNITS&quot;. KmPerHour and MilesPerHour could such be combined to one&#xA;group named &quot;vehicle_speed&quot;. The unit MeterPerSec would not belong to this group because it is&#xA;normally not used for vehicle speed. But all of the mentioned units could be combined to one group&#xA;named &quot;speed&quot;.&#xA;&#xA;Note that the UnitGroup does not ensure the physical compliance of the units. This is maintained by the&#xA;physical dimension." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="unit" type="Classifier:unit" description="This represents one particular unit in the UnitGroup." unit="unit" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

@@ -1,0 +1,70 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="73424F91-9" name="SwComponentTypes" version="1.0" notes="SwComponentTypes"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="applicationswcomponenttype" metatype=" ApplicationSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
+			<Stereotype name="atomicswcomponenttype" metatype="AtomicSwComponentType" notes="An atomic software component is atomic in the sense that it cannot be further decomposed and distributed across multiple ECUs." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swcomponenttype" baseStereotypes="swcomponenttype">
+				<TaggedValues>
+					<Tag name="internalBehavior" type="Classifier:internalBehavior" description="The SwcInternalBehaviors owned by an AtomicSwComponentType can be located in a different physical file.&#xA;&#xA;Therefore the aggregation is &lt;&lt;atpSplitable&gt;&gt;." unit="swcinternalbehavior" values="" default=""/>
+					<Tag name="symbolProps" type="Classifier:symbolProps" description="This represents the SymbolProps for the AtomicSwComponentType." unit="symbolprops" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="complexdevicedriverswcomponenttype" metatype="ComplexDeviceDriverSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
+			<Stereotype name="compositionswcomponenttype" metatype="CompositionSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swcomponenttype" baseStereotypes="swcomponenttype">
+				<TaggedValues>
+					<Tag name="component" type="Classifier:component" description="" unit="swcomponentprototype" values="" default=""/>
+					<Tag name="connector" type="Classifier:connector" description="" unit="swconnector" values="" default=""/>
+					<Tag name="constantValueMapping" type="int" description="" unit="" values="" default=""/>
+					<Tag name="dataTypeMapping" type="Classifier:dataTypeMapping" description="" unit="datatypemappingset" values="" default=""/>
+					<Tag name="instantiationRTEEventProps" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ecuabstractionswcomponenttype" metatype="EcuAbstractionSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
+			<Stereotype name="nvblockswcomponenttype" metatype="NvBlockSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
+			<Stereotype name="parameterswcomponenttype" metatype="ParameterSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swcomponenttype" baseStereotypes="swcomponenttype"/>
+			<Stereotype name="portgroup" metatype="PortGroup" notes=" Group of ports which share a common functionality, e.g. need specific network resources. This information shall be available on the VFB level in order to delegate it properly via compositions. When propagated into the ECU extract, this information is used as input for the configuration of Services like the Communication Manager.&#xA;&#xA;A PortGroup is defined locally in a component (which can be a composition) and refers to the &quot;outer&quot; ports belonging to the group as well as to the &quot;inner&quot; groups which propagate this group into the components which are part of a composition. A PortGroup within an atomic SWC cannot be linked to inner groups." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="innerGroup" type="Classifier:innerGroup" description=" Links a PortGroup in a composition to another PortGroup, that is defined in a component which is part of this CompositionSwComponentType." unit="portgroup" values="" default=""/>
+					<Tag name="outerGroup" type="Classifier:outerGroup" description="Outer PortPrototype of this AtomicSwComponentType which belongs to the group. A port can belong to several groups or to no group at all." unit="portprototype" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="sensoractuatorswcomponenttype" metatype="SensorActuatorSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
+			<Stereotype name="serviceproxyswcomponenttype" metatype="ServiceProxySwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
+			<Stereotype name="serviceswcomponenttype" metatype="ServiceSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
+			<Stereotype name="swcomponentprototype" metatype="SwComponentPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="type" type="Classifier:type" description="Type of the instance." unit="swcomponenttype" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="swcomponenttype" metatype="SwComponentType" notes="Base class for AUTOSAR software components" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="consistencyNeeds" type="ConstistencyNeeds" description=" This represents the collection of ConsistencyNeeds owned by the enclosing SwComponentType." unit="" values="" default=""/>
+					<Tag name="port" type="Classifier:port" description="The PortPrototypes through which this SwComponentType can communicate." unit="portprototype" values="" default=""/>
+					<Tag name="portGroup" type="Classifier:portGroup" description=" A port group being part of this component." unit="portgroup" values="" default=""/>
+					<Tag name="swMappingConstraint" type="SwComponentMappingConstraints" description=" Reference to constraints that are valid for this SwComponentType." unit="" values="" default=""/>
+					<Tag name="swComponentDocumentation" type="SwComponentDocumentation" description="" unit="" values="" default=""/>
+					<Tag name="unitGroup" type="Classifier:unitGroup" description="This allows for the specification of which UnitGroups are relevant in the context of referencing SwComponentType." unit="unitgroup" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

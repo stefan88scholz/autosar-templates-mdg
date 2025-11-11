@@ -1,0 +1,33 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="79FAF4F7-6" name="Connectors" version="1.0" notes="Connectors"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="assemblyswconnector" metatype="AssemblySwConnector" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swconnector" baseStereotypes="swconnector">
+				<TaggedValues>
+					<Tag name="provider" type="Classifier:provider" description="Instance of providing port." unit="abstractprovidedportprototype" values="" default=""/>
+					<Tag name="requester" type="Classifier:requester" description=" Instance of requiring port." unit="abstractrequiredportprototype" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="delegationswconnector" metatype="DelegationSwConnector" notes=" A delegation connector delegates one inner PortPrototype (a port of a component that is used inside the composition) to a outer PortPrototype of compatible type that belongs directly to the composition (a port that is owned by the composition)." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swconnector" baseStereotypes="swconnector">
+				<TaggedValues>
+					<Tag name="innerPort" type="Classifier:innerPort" description="" unit="portprototype" values="" default=""/>
+					<Tag name="outerPort" type="Classifier:outerPort" description="" unit="portprototype" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="swconnector" metatype="SwConnector" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="mapping" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>
