@@ -1,0 +1,51 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="7FCC99C8-F" name="InternalBehavior" version="0.2" notes="InternalBehavior"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="bswinternalbehavior" metatype="BswInternalBehavior" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="internalbehavior" baseStereotypes="internalbehavior"/>
+			<Stereotype name="instantiationdatadefprops" metatype="InstantiationDataDefProps" notes="These are the particular data definition properties which&#xA;shall be applied" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="parameterInstance" type="Classifier:parameterInstance" description="This reference identifies the particular DataPrototype (defined in the context of a composite ParameterDataPrototype) on which the swDataDefProps shall be applied." unit="autosarparameterref" values="" default=""/>
+					<Tag name="swDataDefProps" type="Classifier:swDataDefProps" description="" unit="instantiationdatadefprops" values="" default=""/>
+					<Tag name="variableInstance" type="Classifier:variableInstance" description=" This reference identifies the particular DataPrototype (defined in the context of a composite VariableDataPrototype) on which the swDataDefProps shall be applied." unit="autosarvariableref" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="internalbehavior" metatype="InternalBehavior" notes="Common base class (abstract) for the internal behavior of both software components and basic software modules/clusters." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="constantMemory" type="Classifier:constantMemory" description="Describes a read only memory object containing characteristic value(s) implemented by this InternalBehavior.&#xA;&#xA;The shortName of ParameterDataPrototype has to be equal to the ”C’ identifier of the described constant.&#xA;&#xA;The characteristic value(s) might be shared between SwComponentPrototypes of the same SwComponentType.&#xA;&#xA;The aggregation of constantMemory is subject to variability with the purpose to support variability in the software component or module implementations. Typically different algorithms in the implementation are requiring different number of memory objects." unit="parameterdataprototype" values="" default=""/>
+					<Tag name="constantValueMapping" type="Classifier:constantValueMapping" description="Reference to the ConstantSpecificationMapping to be applied for the particular InternalBehavior" unit="compositevaluespecification" values="" default=""/>
+					<Tag name="data&gt;TypeMapping" type="int" description="" unit="" values="" default=""/>
+					<Tag name="exclusiveArea" type="int" description="" unit="" values="" default=""/>
+					<Tag name="exclusiveAreaNestingOrder" type="int" description="" unit="" values="" default=""/>
+					<Tag name="staticMemory" type="Classifier:staticMemory" description="Describes a read and writeable static memory object representing measurerment variables implemented by&#xA;this software component. The term &quot;static&quot; is used in the meaning of &quot;non-temporary&quot; and does not necessarily specify a linker encapsulation. This kind of memory is only supported if supportsMultipleInstantiation is FALSE.&#xA;&#xA;The shortName of the VariableDataPrototype has to be equal with the ”C’ identifier of the described variable.&#xA;&#xA;The aggregation of staticMemory is subject to variability&#xA;with the purpose to support variability in the software component’s implementations.&#xA;&#xA;Typically different algorithms in the implementation are requiring different number of memory objects." unit="variabledataprototype" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="swcinternalbehavior" metatype="SwcInternalBehavior" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="internalbehavior" baseStereotypes="internalbehavior">
+				<TaggedValues>
+					<Tag name="arTypedPerInstanceMemory" type="Classifier:arTypedPerInstanceMemory" description=" Defines an AUTOSAR typed memory-block that needs to be available for each instance of the SW-component.&#xA;This is typically only useful if supportsMultipleInstantiation&#xA;is set to &quot;true&quot; or if the component defines NVRAM access via permanent blocks.&#xA;The aggregation of arTypedPerInstanceMemory is subject&#xA;to variability with the purpose to support variability in the&#xA;software component’s implementations. Typically different&#xA;algorithms in the implementation are requiring different&#xA;number of memory objects." unit="variabledataprototype" values="" default=""/>
+					<Tag name="event" type="int" description="" unit="" values="" default=""/>
+					<Tag name="exclusiveAreaPolicy" type="int" description="" unit="" values="" default=""/>
+					<Tag name="explicitInterRunnableVariable" type="int" description="" unit="" values="" default=""/>
+					<Tag name="handleTerminationAndRestart" type="int" description="" unit="" values="" default=""/>
+					<Tag name="implicitInterRunnableVariable" type="int" description="" unit="" values="" default=""/>
+					<Tag name="includedDataTypeSet" type="int" description="" unit="" values="" default=""/>
+					<Tag name="includedModeDeclarationGroupSet" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

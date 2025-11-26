@@ -1,0 +1,36 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="D068E0E1-C" name="PortPrototypes" version="0.2" notes="PortPrototypes"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="abstractprovidedportprototype" metatype="AbstractProvidedPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portprototype" baseStereotypes="portprototype"/>
+			<Stereotype name="abstractrequiredportprototype" metatype="AbstractRequiredPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portprototype" baseStereotypes="portprototype"/>
+			<Stereotype name="portprototype" metatype="PortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="pportprototype" metatype="PPortPrototype" notes="Component port providing a certain port interface." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractprovidedportprototype" baseStereotypes="abstractprovidedportprototype">
+				<TaggedValues>
+					<Tag name="providedInterface" type="Classifier:providedInterface" description=" The interface that this port provides." unit="portinterface" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="prportprototype" metatype="PRPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractprovidedportprototype" baseStereotypes="abstractprovidedportprototype abstractrequiredportprototype">
+				<TaggedValues>
+					<Tag name="providedRequiredInterface" type="Classifier:providedRequiredInterface" description="" unit="portinterface" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="rportprototype" metatype="RPortPrototype" notes="Component port requiring a certain port interface." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractrequiredportprototype" baseStereotypes="abstractrequiredportprototype">
+				<TaggedValues>
+					<Tag name="mayBeUnconnected" type="" description="" unit="" values="" default="false"/>
+					<Tag name="requiredInterface" type="Classifier:requiredInterface" description="" unit="portinterface" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

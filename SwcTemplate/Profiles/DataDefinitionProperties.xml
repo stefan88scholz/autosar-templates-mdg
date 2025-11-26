@@ -1,0 +1,52 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="393A3666-7" name="DataDefinitionProperties" version="0.1" notes="DataDefinitionProperties"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="annotation" metatype="Annotation" notes=" This is a plain annotation which does not have further formal data." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0"/>
+			<Stereotype name="swbitrepresentation" metatype="SwBitRepresentation" notes="Description of the structure of a bit variable: Comprises of the bitPosition in a memory object (e.g. swHostVariable, which stands parallel to swBitRepresentation) and the numberOfBits . In this way,&#xA;interrelated memory areas can be described. Non-related memory areas are not supported." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<TaggedValues>
+					<Tag name="bitPosition" type="Classifier:bitPosition" description="" unit="Integer" values="" default=""/>
+					<Tag name="numberOfBits" type="Classifier:numberOfBits" description="" unit="Integer" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="swdatadefprops" metatype="SwDataDefProps" notes="This class is a collection of properties relevant for data objects under various aspects. One could&#xA;consider this class as a &quot;pattern of inheritance by aggregation&quot;. The properties can be applied to all&#xA;objects of all classes in which SwDataDefProps is aggregated." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<TaggedValues>
+					<Tag name="additionalNativeTypeQualifier" type="Classifier:additionalNativeTypeQualifier" description="This attribute is used to declare native qualifiers of the programming language which can neither be deduced from the baseType (e.g. because the data object describes a pointer) nor from other more abstract attributes. Examples are qualifiers like &quot;volatile&quot;, &quot;strict&quot; or &quot;enum&quot; of the C-language. All such declarations have to be put into one string." unit="nativedeclarationstring" values="" default=""/>
+					<Tag name="annotation" type="Classifier:annotation" description=" This aggregation allows to add annotations (yellow pads...) related to the current data object." unit="annotation" values="" default=""/>
+					<Tag name="baseType" type="Classifier:baseType" description="Base type associated with the containing data object." unit="annotation" values="" default=""/>
+					<Tag name="compuMethod" type="int" description="Computation method associated with the semantics of this data object." unit="" values="" default=""/>
+					<Tag name="dataContr" type="int" description="Data constraint for this data object." unit="" values="" default=""/>
+					<Tag name="displayFormat" type="int" description="This property describes how a number is to be rendered e.g. in documents or in a measurement and calibration system" unit="" values="" default=""/>
+					<Tag name="displayPresentation" type="int" description="" unit="" values="" default=""/>
+					<Tag name="implementationDataType" type="int" description="" unit="" values="" default=""/>
+					<Tag name="invalidValue" type="int" description="" unit="" values="" default=""/>
+					<Tag name="stepSize" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swAddrMethod" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swAlignment" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swBitRepresentation" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swCalibrationAccess" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swCalprmAxixSet" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swComparisonVariable" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swDataDependency" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swHostVariable" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swImplPolicy" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swIntendedResolution" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swInterpolationMethod" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swIsVirtual" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swPointerTargetProps" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swRecordLayout" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swRefreshTiming" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swTextProps" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swValueBlockSize" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swValueBlockSizeMult" type="int" description="" unit="" values="" default=""/>
+					<Tag name="unit" type="int" description="" unit="" values="" default=""/>
+					<Tag name="valueAxisDataType" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

@@ -1,0 +1,24 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="94828435-D" name="Triggerings and Ports" version="0.2" notes="AUTOSAR_TPS_SystemTemplate, chapter 6 Communication, subchapter 6.1 Triggering and Ports"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="commconnectorport" metatype="CommConnectorPort" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="communicationDirection" type="int" description="Communication Direction of the Connector Port (input or output Port)." unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="frameport" metatype="FramePort" notes=" Connectors reception or send port on the referenced channel referenced by a FrameTriggering." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="commconnectorport" baseStereotypes="commconnectorport"/>
+			<Stereotype name="ipdport" metatype="IPduPort" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="commconnectorport" baseStereotypes="commconnectorport"/>
+			<Stereotype name="isignalport" metatype="ISignalPort" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="commconnectorport" baseStereotypes="commconnectorport"/>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

@@ -1,6 +1,6 @@
 <?xml  version='1.0' encoding='windows-1252' ?>
 <UMLProfile profiletype="uml2">
-	<Documentation id="09E1D680-8" name="DataTypes" version="1.0" notes="DataTypes"/>
+	<Documentation id="09E1D680-8" name="DataTypes" version="0.2" notes="DataTypes"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="abstractimplementationdatatype" metatype="AbstractImplementationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardatatype" baseStereotypes="autosardatatype"/>
@@ -48,7 +48,7 @@
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="SwDataDefProps" type="Classifier:SwDataDefProps" description="" unit="SwDataDefProps" values="" default=""/>
+					<Tag name="SwDataDefProps" type="SwDataDefProps" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="implementationdatatype" metatype="ImplementationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractimplementationdatatype" baseStereotypes="abstractimplementationdatatype"/>
@@ -61,13 +61,6 @@
 				<TaggedValues>
 					<Tag name="symbol" type=" CIdentifier" description="The symbol to be used as (depending on the concrete case) either a complete replacement or a prefix." unit="" values="" default=""/>
 				</TaggedValues>
-			</Stereotype>
-			<Stereotype name="SwDataDefProps" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-				<AppliesTo>
-					<Apply type="Class">
-						<Property name="isActive" value=""/>
-					</Apply>
-				</AppliesTo>
 			</Stereotype>
 			<Stereotype name="symbolicnameprops" metatype="SymbolicNameProps" notes="This meta-class can be taken to contribute to the creation of symbolic name values." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="implementationprops" baseStereotypes="implementationprops"/>
 			<Stereotype name="symbolprops" metatype="SymbolProps" notes=" This meta-class represents the ability to attach with the symbol attribute a symbolic name that is conform to C language requirements to another meta-class, e.g. AtomicSwComponentType, that is a potential subject to a name clash on the level of RTE source code." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="implementationprops" baseStereotypes="implementationprops"/>

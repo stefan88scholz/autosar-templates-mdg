@@ -1,0 +1,22 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="4B6C9E2F-4" name="System" version="0.2" notes="System"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="system" metatype="System" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="mapping" type="Classifier:mapping" description="" unit="systemmapping" values="" default=""/>
+					<Tag name="fibexElement" type="Classifier:fibexElement" description="" unit="fibexelement" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

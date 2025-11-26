@@ -1,0 +1,73 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="15D07FE7-9" name="Constants" version="0.2" notes="Constants"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="abstractrulebasedvaluespecification" metatype="AbstractRuleBasedValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification"/>
+			<Stereotype name="applicationvaluespecification" metatype="ApplicationValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification"/>
+			<Stereotype name="arrayvaluespecification" metatype="ArrayValueSpecification" notes="Specifies the values for an array." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="compositevaluespecification" baseStereotypes="compositevaluespecification">
+				<TaggedValues>
+					<Tag name="element" type="Classifier:element" description=" The value for a single array element. All ValueSpecifications aggregated by ArrayValueSpecification shall have the same structure." unit="valuespecification" values="" default=""/>
+					<Tag name="intentedPartialInitializationCount" type="Classifier:intentedPartialInitializationCount" description="This attribute shall only have a meaning for dynamic arrays and shall be taken as a sanity check: the number filled in the attribute shall be identical to the number of ArrayValueSpecification.element.&#xA;&#xA;If the attribute does not exist it means that no partial initialization is intended." unit="positiveinteger" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="compositevaluespecification" metatype="CompositeValueSpecification" notes="This abstract meta-class acts a base class for ValueSpecifications that have a composite form." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification"/>
+			<Stereotype name="constantreference" metatype="ConstantReference" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification"/>
+			<Stereotype name="constantspecification" metatype="ConstantSpecification" notes=" Specification of a constant that can be part of a package, i.e. it can be defined stand-alone." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="valueSpec" type="Classifier:valueSpec" description="Specification of an expression leading to a value for this constant." unit="valuespecification" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="constantspecificationmapping" metatype=" ConstantSpecificationMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="applConstant" type="Classifier:applConstant" description="A ConstantSpecification defined in the application domain." unit="constantspecification" values="" default=""/>
+					<Tag name="implConstant" type="Classifier:implConstant" description=" A ConstantSpecification defined in the implementation domain." unit="constantspecification" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="notavailablevaluespecification" metatype="NotAvailableValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification"/>
+			<Stereotype name="numericalvaluespecification" metatype="NumericalValueSpecification" notes=" A numerical ValueSpecification which is intended to be assigned to a Primitive data element. Note that the numerical value is a variant, it can be computed by a formula." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification">
+				<TaggedValues>
+					<Tag name="value" type="Classifier:value" description="" unit="numerical" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="recordvaluespecification" metatype="RecordValueSpecification" notes="Specifies the values for a record." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="compositevaluespecification" baseStereotypes="compositevaluespecification">
+				<TaggedValues>
+					<Tag name="field" type="Classifier:field" description=" The value for a single record field. This could also be mapped explicitly to a record element of the data type using the shortName of the ValueSpecification. But this would introduce a relationship to the data type that is too strong. As of now, it is only important that the structure of the data type matches the structure of the Value Specification independently of the shortNames." unit="valuespecification" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="referencevaluespecification" metatype="ReferenceValueSpecification" notes=" Specifies a reference to a data prototype to be used as an initial value for a pointer in the software." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification">
+				<TaggedValues>
+					<Tag name="referenceValue" type="Classifier:referenceValue" description="The referenced data prototype." unit="dataprototype" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="textvaluespecification" metatype="TextValueSpecification" notes=" The purpose of TextValueSpecification is to define the labels that correspond to enumeration values." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification">
+				<TaggedValues>
+					<Tag name="value" type="Classifier:value" description="This is the value itself. Note that vt uses the | operator to separate the values for the different bitfield masks in case that the semantics of the related DataPrototype is described by means of a BITFIELD_TEXTTABLE in the associated CompuMethod." unit="verbatimstring" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="valuespecification" metatype="ValueSpecification" notes="Base class for expressions leading to a value which can be used to initialize a data object." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="shortLabel" type="Classifier:shortLabel" description="" unit="identifier" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

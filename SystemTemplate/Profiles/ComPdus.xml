@@ -1,0 +1,56 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="1598ED1F-1" name="ComPdus" version="0.3" notes="ComPdus"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="generalpurposepdu" metatype="GeneralPurposePdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="pdu" baseStereotypes="pdu"/>
+			<Stereotype name="ipdu" metatype="IPdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="pdu" baseStereotypes="pdu"/>
+			<Stereotype name="ipdutiming" metatype="IPduTiming" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="isignalipdu" metatype="ISignalIPdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ipdu" baseStereotypes="ipdu"/>
+			<Stereotype name="isignalipdugroup" metatype="ISignalIPduGroup" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="fibexelement" baseStereotypes="fibexelement">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="communicationDirection" type="enumeration" description="" unit="" values="in,out" default=""/>
+					<Tag name="communicationMode" type="Classifier:communicationMode" description="" unit="string" values="" default=""/>
+					<Tag name="iSignalPdu" type="Classifier:iSignalPdu" description="" unit="isignalipdu" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="nmpdu" metatype="NmPdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="pdu" baseStereotypes="pdu"/>
+			<Stereotype name="pdu" metatype="Pdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="fibexelement" baseStereotypes="fibexelement">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="pdutoframemapping" metatype="PduToFrameMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="pdutriggering" metatype="PduTriggering" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="userdefinedpdu" metatype="UserDefinedPdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="pdu" baseStereotypes="pdu"/>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

@@ -1,0 +1,47 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="583F39E1-F" name="TopoCanCom" version="0.3" notes="TopoCanCom"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="abstractcancluster" metatype="AbstractCanCluster" notes="Abstract class that is used to collect the common TtCAN, J1939 and CAN Cluster attributes." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="abstractcancommunicationconnector" metatype="AbstractCanCommunicationConnector" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="communicationconnector" baseStereotypes="communicationconnector"/>
+			<Stereotype name="abstractcancommunicationcontroller" metatype="AbstractCanCommunicationController" notes=" Abstract class that is used to collect the common TtCAN and CAN Controller attribute" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="communicationcontroller" baseStereotypes="communicationcontroller">
+				<TaggedValues>
+					<Tag name="canControllerAttributes" type="Classifier:canControllerAttributes" description=" CAN Bit Timing configuration" unit="abstractcancommunicationcontrollertttributes" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="abstractcancommunicationcontrollertttributes" metatype="AbstractCanCommunicationControllerAttributes" notes="For the configuration of the CanController parameters two different approaches can be used:&#xA;1. Providing exact values which are taken by the ECU developer (CanControllerConfiguration).&#xA;2. Providing ranges of values which are taken as requirements and have to be respected by the ECU developer (CanControllerConfigurationRequirements)." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="canControllerFdAttributes" type="int" description="" unit="" values="" default=""/>
+					<Tag name="canControllerFdRequirements" type="int" description="" unit="" values="" default=""/>
+					<Tag name="canControllerXlAttributes" type="int" description="" unit="" values="" default=""/>
+					<Tag name="canControllerXlRequirements" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="abstractcanphysicalchannel" metatype="AbstractCanPhysicalChannel" notes="Abstract class that is used to collect the common TtCAN and CAN PhysicalChannel attributes." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="physicalchannel" baseStereotypes="physicalchannel"/>
+			<Stereotype name="cancluster" metatype="CanCluster" notes="CAN bus specific cluster attributes." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancluster" baseStereotypes="abstractcancluster fibexelement"/>
+			<Stereotype name="cancommunicationconnector" metatype="cancommunicationconnector" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationconnector" baseStereotypes="abstractcancommunicationconnector"/>
+			<Stereotype name="cancommunicationcontroller" metatype="CanCommunicationController" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationcontroller" baseStereotypes="abstractcancommunicationcontroller"/>
+			<Stereotype name="cancontrollerconfiguration" metatype="CanControllerConfiguration" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationcontrollertttributes" baseStereotypes="abstractcancommunicationcontrollertttributes"/>
+			<Stereotype name="cancontrollerconfigurationrequirements" metatype="CanControllerConfigurationRequirements" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationcontrollertttributes" baseStereotypes="abstractcancommunicationcontrollertttributes"/>
+			<Stereotype name="cancontrollerfdconfiguration" metatype="CanControllerFdConfiguration" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationcontrollertttributes" baseStereotypes="abstractcancommunicationcontrollertttributes"/>
+			<Stereotype name="cancontrollerfdconfigurationrequirements" metatype="CanControllerFdConfigurationRequirements" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationcontrollertttributes" baseStereotypes="abstractcancommunicationcontrollertttributes"/>
+			<Stereotype name="canphysicalchannel" metatype="CanPhysicalChannel" notes=" CAN bus specific physical channel attributes." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcanphysicalchannel" baseStereotypes="abstractcanphysicalchannel"/>
+			<Stereotype name="ttcanphysicalchannel" metatype="TtcanPhysicalChannel" notes="TTCAN bus specific physical channel attributes." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcanphysicalchannel" baseStereotypes="abstractcanphysicalchannel"/>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

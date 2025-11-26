@@ -1,0 +1,36 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="F550D61D-7" name="DataMapping" version="0.3" notes="DataMapping"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="clientservertosignalmapping" metatype="ClientServerToSignalMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="datamapping" baseStereotypes="datamapping"/>
+			<Stereotype name="datamapping" metatype="DataMapping" notes="Mapping of port elements (data elements and parameters) to frames and signals." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="senderreceivertosignalgroupmapping" metatype="SenderReceiverToSignalGroupMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="datamapping" baseStereotypes="datamapping">
+				<TaggedValues>
+					<Tag name="dataElement" type="variabledataprototype" description="" unit="" values="" default=""/>
+					<Tag name="signalGroup" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="systemsignal" metatype="SystemSignal" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="dynamicLength" type="Classifier:dynamicLength" description="" unit="boolean" values="" default=""/>
+					<Tag name="physicalProps" type="swdatadefprops" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

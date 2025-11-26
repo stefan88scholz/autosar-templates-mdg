@@ -1,0 +1,65 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="40C00EDC-6" name="ComISignals" version="0.3" notes="AUTOSAR_TPS_SystemTemplate, chapter 6 Communication, subchapter 6.2 ISignals"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="isignal" metatype="ISignal" notes="Signal of the Interaction Layer. The RTE supports a &quot;signal fan-out&quot; where the same System Signal is sent in different SignalIPdus to multiple receivers.&#xA;&#xA;To support the RTE &quot;signal fan-out&quot; each SignalIPdu contains ISignals. If the same System Signal is to be mapped into several SignalIPdus there is one ISignal needed for each ISignalToIPduMapping.&#xA;&#xA;ISignals describe the Interface between the Precompile configured RTE and the potentially Postbuild configured Com Stack (see ECUC Parameter Mapping).&#xA;&#xA;In case of the SystemSignalGroup an ISignal shall be created for each SystemSignal contained in the SystemSignalGroup." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="fibexelement" baseStereotypes="fibexelement">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="dataTransformation" type="int" description="" unit="" values="" default=""/>
+					<Tag name="dataTypePolicy" type="enumeration" description="" unit="" values="legacy,networkRepresentationFromComSpec,override,transformingISignal" default=""/>
+					<Tag name="initValue" type="int" description="" unit="" values="" default=""/>
+					<Tag name="iSignalProps" type="int" description="" unit="" values="" default=""/>
+					<Tag name="iSignalType" type="int" description="" unit="" values="" default=""/>
+					<Tag name="length" type="int" description="" unit="" values="" default=""/>
+					<Tag name="networkRepresentationProps" type="int" description="" unit="" values="" default=""/>
+					<Tag name="systemSignal" type="int" description="" unit="" values="" default=""/>
+					<Tag name="timeoutSubstitutionValue" type="int" description="" unit="" values="" default=""/>
+					<Tag name="transformationISignalProps" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="isignalgroup" metatype="ISignalGroup" notes=" Additional ISignal properties that may be stored in different files." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="fibexelement" baseStereotypes="fibexelement">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="isignalprops" metatype="ISignalProps" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="handleOutOfRange" type="enumeration" description="" unit="" values="default,externalReplacement,ignore,invalid,none,saturate" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="isignaltoipdumapping" metatype="ISignalToIPduMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="systemsignalgroup" metatype="SystemSignalGroup" notes="A signal group refers to a set of signals that shall always be kept together. A signal group is used to guarantee the atomic transfer of AUTOSAR composite data types.&#xA;&#xA;The SystemSignalGroup defines a signal grouping on VFB level. On cluster level the Signal grouping is described by the ISignalGroup element." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="fibexelement" baseStereotypes="fibexelement">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="systemSignal" type="Classifier:systemSignal" description="Reference to a set of SystemSignals that shall always be kept together." unit="systemsignal" values="" default=""/>
+					<Tag name="transformingSystemSignal" type="Classifier:transformingSystemSignal" description="Optional reference to the SystemSignal which shall contain the transformed (linear) data." unit="systemsignal" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

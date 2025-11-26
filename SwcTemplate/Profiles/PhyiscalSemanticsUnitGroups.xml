@@ -1,6 +1,6 @@
 <?xml  version='1.0' encoding='windows-1252' ?>
 <UMLProfile profiletype="uml2">
-	<Documentation id="BDDD1FC8-4" name="PhyiscalSemanticsUnitGroups" version="1.0" notes="PhyiscalSemanticsUnitGroups"/>
+	<Documentation id="BDDD1FC8-4" name="PhyiscalSemanticsUnitGroups" version="0.1" notes="PhyiscalSemanticsUnitGroups"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="physicaldimension" metatype="PhysicalDimension" notes="This class represents a physical dimension. If the physical dimension of two units is identical, then a conversion between them is possible. The conversion between units is related to the definition of the physical dimension.&#xA;&#xA;Note that the equivalence of the exponents does not per se define the convertibility. For example Energy and Torque share the same exponents (Nm).&#xA;&#xA;Please note further the value of an exponent does not necessarily have to be an integer number. It is also possible that the value yields a rational number, e.g. to compute the square root of a given physical quantity. In this case the exponent value would be a rational number where the numerator value is 1 and the denominator value is 2." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">

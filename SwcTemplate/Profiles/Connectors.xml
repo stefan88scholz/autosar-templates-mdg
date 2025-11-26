@@ -1,6 +1,6 @@
 <?xml  version='1.0' encoding='windows-1252' ?>
 <UMLProfile profiletype="uml2">
-	<Documentation id="79FAF4F7-6" name="Connectors" version="1.0" notes="Connectors"/>
+	<Documentation id="79FAF4F7-6" name="Connectors" version="0.2" notes="Connectors"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="assemblyswconnector" metatype="AssemblySwConnector" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swconnector" baseStereotypes="swconnector">

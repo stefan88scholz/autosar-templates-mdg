@@ -1,6 +1,6 @@
 <?xml  version='1.0' encoding='windows-1252' ?>
 <UMLProfile profiletype="uml2">
-	<Documentation id="141C66B3-B" name="DataTypeMapping" version="1.0" notes="DataTypeMapping"/>
+	<Documentation id="141C66B3-B" name="DataTypeMapping" version="0.2" notes="DataTypeMapping"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="datatypemap" metatype="DataTypeMap" notes="This class represents the relationship between ApplicationDataType and its implementing AbstractImplementationDataType." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">

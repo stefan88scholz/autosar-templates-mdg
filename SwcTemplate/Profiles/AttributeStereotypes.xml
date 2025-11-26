@@ -1,6 +1,6 @@
 <?xml  version='1.0' encoding='windows-1252' ?>
 <UMLProfile profiletype="uml2">
-	<Documentation id="DBE1A920-7" name="AttibuteStereotypes" version="1.0" notes="AttibuteStereotypes"/>
+	<Documentation id="DBE1A920-7" name="AttibuteStereotypes" version="0.1" notes="AttibuteStereotypes"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="aggr" metatype="Aggregation" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">

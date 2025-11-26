@@ -1,4 +1,0 @@
-<MDG.Selections model="AutosarTemplates --- DBType=11;Connect=Provider=SSDB;SRC=C:\git_repo\autosar-templates-mdg\AutosarTemplates.qea;UID=;PWD=;">
-	<Technology id="AR_R22_11" name="Autosar Templates" version="1.7" notes="Classes, Data types, Primitives defined in AUTOSAR templates" filename="C:\git_repo\autosar-templates-mdg\Profiles\AutosarTemplates.xml"/>
-	<Profiles directory="C:\git_repo\autosar-templates-mdg\Profiles" files="AttributeStereotypes.xml,ComputationMethods.xml,ConnectorExtensions.xml,Connectors.xml,Constants.xml,DataDefinitionProperties.xml,DataPrototypes.xml,DataTypeMapping.xml,DataTypes.xml,GeneralTemplateClasses.xml,InternalBehavior.xml,PhyiscalSemanticsUnitGroups.xml,PortInterface.xml,PortPrototypes.xml,PrimitiveTypes.xml,SwComponentTypes.xml"/>
-</MDG.Selections>

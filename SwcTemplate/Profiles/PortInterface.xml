@@ -1,10 +1,15 @@
 <?xml  version='1.0' encoding='windows-1252' ?>
 <UMLProfile profiletype="uml2">
-	<Documentation id="C324609F-7" name="PortInterface" version="1.0" notes="PortInterface"/>
+	<Documentation id="C324609F-7" name="PortInterface" version="0.2" notes="PortInterface"/>
 	<Content>
 		<Stereotypes>
-			<Stereotype name="clientserverinterface" metatype="ClientServerInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portinterface" baseStereotypes="portinterface"/>
-			<Stereotype name="datainterface" metatype="DataInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portinterface" baseStereotypes="portinterface"/>
+			<Stereotype name="clientserverinterface" metatype="ClientServerInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portinterface" baseStereotypes="portinterface">
+				<TaggedValues>
+					<Tag name="operation" type="int" description="" unit="" values="" default=""/>
+					<Tag name="possibleError" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="datainterface" metatype="DataInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portinterface" baseStereotypes="portinterface"/>
 			<Stereotype name="invalidationpolicy" metatype="InvalidationPolicy" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
@@ -22,7 +27,7 @@
 			<Stereotype name="modeswitchinterface" metatype="ModeSwitchInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portinterface" baseStereotypes="portinterface"/>
 			<Stereotype name="nvdatainterface" metatype="NvDataInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="datainterface" baseStereotypes="datainterface"/>
 			<Stereotype name="parameterinterface" metatype="ParameterInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="datainterface" baseStereotypes="datainterface"/>
-			<Stereotype name="portinterface" metatype="PortInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="portinterface" metatype="PortInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
@@ -30,7 +35,7 @@
 				</AppliesTo>
 				<TaggedValues>
 					<Tag name="isService" type="Boolean" description="This flag is set if the PortInterface is to be used for&#xA;communication between an&#xA;• ApplicationSwComponentType or&#xA;• ServiceProxySwComponentType or&#xA;• SensorActuatorSwComponentType or&#xA;• ComplexDeviceDriverSwComponentType&#xA;• ServiceSwComponentType&#xA;• EcuAbstractionSwComponentType&#xA;and a ServiceSwComponentType (namely an AUTOSAR&#xA;Service) located on the same ECU. Otherwise the flag is&#xA;not set." unit="" values="True,False" default=""/>
-					<Tag name="serviceKind" type="ServerProvidederEnum" description="This attribute provides further details about the nature of the applied service." unit="" values="" default=""/>
+					<Tag name="serviceKind" type="enumeration" description="This attribute provides further details about the nature of the applied service." unit="" values="anyStandardized,basicSoftwareModeManager,comManager,cryptoServiceManager,defaultErrorTracer,diagnosticCommunicationManager,diagnosticEventManager,diagnosticLogAndTrace,ecuManager,functionInhibitionManager,j1939RequestManager,nonVolatileRamManager,operatingSystem,secureOnBoardCommunication,syncBaseTimeManager,vendorSpecific,watchDogManager,errorTracer,hardwareTestManager,v2xFacilitities,v2xManagement,j1939Dcm,cryptoKeyManagement,intrusionDetectionSecurityManagement" default=""/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="senderreceiverinterface" metatype="SenderReceiverInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="datainterface" baseStereotypes="datainterface">

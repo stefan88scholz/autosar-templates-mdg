@@ -1,0 +1,27 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="0D5CEFE5-A" name="ComFrames" version="0.2" notes="AUTOSAR_TPS_SystemTemplate, chapter 6 Communication, subchapter 6.3 Frames"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="canframe" metatype="CanFrame" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="fibexelement" baseStereotypes="fibexelement frame"/>
+			<Stereotype name="canframetriggering" metatype="CanFrameTriggering" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="frametriggering" baseStereotypes="frametriggering"/>
+			<Stereotype name="frame" metatype="Frame" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="frametriggering" metatype="FrameTriggering" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile>

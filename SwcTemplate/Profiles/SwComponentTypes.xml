@@ -1,6 +1,6 @@
 <?xml  version='1.0' encoding='windows-1252' ?>
 <UMLProfile profiletype="uml2">
-	<Documentation id="73424F91-9" name="SwComponentTypes" version="1.0" notes="SwComponentTypes"/>
+	<Documentation id="73424F91-9" name="SwComponentTypes" version="0.2" notes="SwComponentTypes"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="applicationswcomponenttype" metatype=" ApplicationSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
@@ -10,7 +10,7 @@
 					<Tag name="symbolProps" type="Classifier:symbolProps" description="This represents the SymbolProps for the AtomicSwComponentType." unit="symbolprops" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="complexdevicedriverswcomponenttype" metatype="ComplexDeviceDriverSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
+			<Stereotype name="complexdevicedriverswcomponenttype" metatype="ComplexDeviceDriverSwCwomponenttype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
 			<Stereotype name="compositionswcomponenttype" metatype="CompositionSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swcomponenttype" baseStereotypes="swcomponenttype">
 				<TaggedValues>
 					<Tag name="component" type="Classifier:component" description="" unit="swcomponentprototype" values="" default=""/>
@@ -22,7 +22,13 @@
 			</Stereotype>
 			<Stereotype name="ecuabstractionswcomponenttype" metatype="EcuAbstractionSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
 			<Stereotype name="nvblockswcomponenttype" metatype="NvBlockSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
-			<Stereotype name="parameterswcomponenttype" metatype="ParameterSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swcomponenttype" baseStereotypes="swcomponenttype"/>
+			<Stereotype name="parameterswcomponenttype" metatype="ParameterSwComponentType" notes=" The ParameterSwComponentType defines parameters and characteristic values accessible via provided Ports. The provided values are the same for all connected SwComponentPrototypes" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swcomponenttype" baseStereotypes="swcomponenttype">
+				<TaggedValues>
+					<Tag name="constantMapping" type="Classifier:constantMapping" description="" unit="constantspecificationmapping" values="" default=""/>
+					<Tag name="dataTypeMapping" type="Classifier:dataTypeMapping" description="" unit="datatypemappingset" values="" default=""/>
+					<Tag name="instantiationDataDefProps" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
 			<Stereotype name="portgroup" metatype="PortGroup" notes=" Group of ports which share a common functionality, e.g. need specific network resources. This information shall be available on the VFB level in order to delegate it properly via compositions. When propagated into the ECU extract, this information is used as input for the configuration of Services like the Communication Manager.&#xA;&#xA;A PortGroup is defined locally in a component (which can be a composition) and refers to the &quot;outer&quot; ports belonging to the group as well as to the &quot;inner&quot; groups which propagate this group into the components which are part of a composition. A PortGroup within an atomic SWC cannot be linked to inner groups." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">

@@ -1,0 +1,4 @@
+<MDG.Selections model="AutosarSysTemplate --- DBType=11;Connect=Provider=SSDB;SRC=C:\git_repo\autosar-templates-mdg\SystemTemplate\AutosarSysTemplate.qea;UID=;PWD=;">
+	<Technology id="AR_TPS_SYS" name="AutosarSysTemplate" version="0.7" notes="AUTOSAR TPS System Template" filename="C:\git_repo\autosar-templates-mdg\SystemTemplate\AutosarSysTemplate.xml"/>
+	<Profiles directory="C:\git_repo\autosar-templates-mdg\SystemTemplate\Profiles" files="ComFrames.xml,ComISignals.xml,ComPdus.xml,ComTriggeringAndPorts.xml,DataMapping.xml,GeneralClasses.xml,Mapping.xml,System.xml,TopoCanCom.xml,Topology.xml"/>
+</MDG.Selections>

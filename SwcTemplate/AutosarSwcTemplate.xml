@@ -1,6 +1,6 @@
 <?xml  version='1.0' encoding='windows-1252' ?>
-<MDG.Technology version="1.0"><Documentation id="AR_R22_11" name="Autosar Templates" version="1.7" notes="Classes, Data types, Primitives defined in AUTOSAR templates"/><UMLProfiles><UMLProfile profiletype="uml2">
-	<Documentation id="DBE1A920-7" name="AttibuteStereotypes" version="1.0" notes="AttibuteStereotypes"/>
+<MDG.Technology version="1.0"><Documentation id="AR_R22_11" name="AutosarSwcTemplate" version="0.4" notes="Classes, Data types, Primitives defined in AUTOSAR software component template"/><UMLProfiles><UMLProfile profiletype="uml2">
+	<Documentation id="DBE1A920-7" name="AttibuteStereotypes" version="0.1" notes="AttibuteStereotypes"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="aggr" metatype="Aggregation" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -34,7 +34,7 @@
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="234CF34A-7" name="ComputationMethods" version="1.0" notes="ComputationMethods"/>
+	<Documentation id="234CF34A-7" name="ComputationMethods" version="0.1" notes="ComputationMethods"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="compu" metatype="Compu" notes="This meta-class represents the ability to express one particular computation" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -134,7 +134,7 @@
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="B9F35507-E" name="ConnectorExtensions" version="1.0" notes="ConnectorExtensions"/>
+	<Documentation id="B9F35507-E" name="ConnectorExtensions" version="0.1" notes="ConnectorExtensions"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="isOfType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -148,7 +148,7 @@
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="79FAF4F7-6" name="Connectors" version="1.0" notes="Connectors"/>
+	<Documentation id="79FAF4F7-6" name="Connectors" version="0.2" notes="Connectors"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="assemblyswconnector" metatype="AssemblySwConnector" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swconnector" baseStereotypes="swconnector">
@@ -179,35 +179,69 @@
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="15D07FE7-9" name="Constants" version="1.0" notes="Constants"/>
+	<Documentation id="15D07FE7-9" name="Constants" version="0.2" notes="Constants"/>
 	<Content>
 		<Stereotypes>
-			<Stereotype name="AbstractRuleBasedValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
-			<Stereotype name="ApplicationValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
-			<Stereotype name="CompositeValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
-			<Stereotype name="ConstantReference" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
-			<Stereotype name="ConstantSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-				<AppliesTo>
-					<Apply type="Class">
-						<Property name="isActive" value=""/>
-					</Apply>
-				</AppliesTo>
+			<Stereotype name="abstractrulebasedvaluespecification" metatype="AbstractRuleBasedValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification"/>
+			<Stereotype name="applicationvaluespecification" metatype="ApplicationValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification"/>
+			<Stereotype name="arrayvaluespecification" metatype="ArrayValueSpecification" notes="Specifies the values for an array." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="compositevaluespecification" baseStereotypes="compositevaluespecification">
 				<TaggedValues>
-					<Tag name="valueSpec" type="Classifier:valueSpec" description="" unit="ValueSpecification" values="" default=""/>
+					<Tag name="element" type="Classifier:element" description=" The value for a single array element. All ValueSpecifications aggregated by ArrayValueSpecification shall have the same structure." unit="valuespecification" values="" default=""/>
+					<Tag name="intentedPartialInitializationCount" type="Classifier:intentedPartialInitializationCount" description="This attribute shall only have a meaning for dynamic arrays and shall be taken as a sanity check: the number filled in the attribute shall be identical to the number of ArrayValueSpecification.element.&#xA;&#xA;If the attribute does not exist it means that no partial initialization is intended." unit="positiveinteger" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="NotAvailableValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
-			<Stereotype name="NumericalValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
-			<Stereotype name="ReferenceValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
-			<Stereotype name="TextValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ValueSpecification" baseStereotypes="ValueSpecification"/>
-			<Stereotype name="ValueSpecification" notes="Base class for expressions leading to a value which can be used to initialize a data object." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+			<Stereotype name="compositevaluespecification" metatype="CompositeValueSpecification" notes="This abstract meta-class acts a base class for ValueSpecifications that have a composite form." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification"/>
+			<Stereotype name="constantreference" metatype="ConstantReference" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification"/>
+			<Stereotype name="constantspecification" metatype="ConstantSpecification" notes=" Specification of a constant that can be part of a package, i.e. it can be defined stand-alone." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="shortLabel" type="Identifier" description="" unit="" values="" default=""/>
+					<Tag name="valueSpec" type="Classifier:valueSpec" description="Specification of an expression leading to a value for this constant." unit="valuespecification" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="constantspecificationmapping" metatype=" ConstantSpecificationMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="applConstant" type="Classifier:applConstant" description="A ConstantSpecification defined in the application domain." unit="constantspecification" values="" default=""/>
+					<Tag name="implConstant" type="Classifier:implConstant" description=" A ConstantSpecification defined in the implementation domain." unit="constantspecification" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="notavailablevaluespecification" metatype="NotAvailableValueSpecification" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification"/>
+			<Stereotype name="numericalvaluespecification" metatype="NumericalValueSpecification" notes=" A numerical ValueSpecification which is intended to be assigned to a Primitive data element. Note that the numerical value is a variant, it can be computed by a formula." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification">
+				<TaggedValues>
+					<Tag name="value" type="Classifier:value" description="" unit="numerical" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="recordvaluespecification" metatype="RecordValueSpecification" notes="Specifies the values for a record." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="compositevaluespecification" baseStereotypes="compositevaluespecification">
+				<TaggedValues>
+					<Tag name="field" type="Classifier:field" description=" The value for a single record field. This could also be mapped explicitly to a record element of the data type using the shortName of the ValueSpecification. But this would introduce a relationship to the data type that is too strong. As of now, it is only important that the structure of the data type matches the structure of the Value Specification independently of the shortNames." unit="valuespecification" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="referencevaluespecification" metatype="ReferenceValueSpecification" notes=" Specifies a reference to a data prototype to be used as an initial value for a pointer in the software." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification">
+				<TaggedValues>
+					<Tag name="referenceValue" type="Classifier:referenceValue" description="The referenced data prototype." unit="dataprototype" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="textvaluespecification" metatype="TextValueSpecification" notes=" The purpose of TextValueSpecification is to define the labels that correspond to enumeration values." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="valuespecification" baseStereotypes="valuespecification">
+				<TaggedValues>
+					<Tag name="value" type="Classifier:value" description="This is the value itself. Note that vt uses the | operator to separate the values for the different bitfield masks in case that the semantics of the related DataPrototype is described by means of a BITFIELD_TEXTTABLE in the associated CompuMethod." unit="verbatimstring" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="valuespecification" metatype="ValueSpecification" notes="Base class for expressions leading to a value which can be used to initialize a data object." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="shortLabel" type="Classifier:shortLabel" description="" unit="identifier" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
 		</Stereotypes>
@@ -216,27 +250,97 @@
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="393A3666-7" name="DataDefinitionProperties" version="1.0" notes="DataDefinitionProperties"/>
+	<Documentation id="393A3666-7" name="DataDefinitionProperties" version="0.1" notes="DataDefinitionProperties"/>
 	<Content>
-		<Stereotypes/>
+		<Stereotypes>
+			<Stereotype name="annotation" metatype="Annotation" notes=" This is a plain annotation which does not have further formal data." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0"/>
+			<Stereotype name="swbitrepresentation" metatype="SwBitRepresentation" notes="Description of the structure of a bit variable: Comprises of the bitPosition in a memory object (e.g. swHostVariable, which stands parallel to swBitRepresentation) and the numberOfBits . In this way,&#xA;interrelated memory areas can be described. Non-related memory areas are not supported." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<TaggedValues>
+					<Tag name="bitPosition" type="Classifier:bitPosition" description="" unit="Integer" values="" default=""/>
+					<Tag name="numberOfBits" type="Classifier:numberOfBits" description="" unit="Integer" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="swdatadefprops" metatype="SwDataDefProps" notes="This class is a collection of properties relevant for data objects under various aspects. One could&#xA;consider this class as a &quot;pattern of inheritance by aggregation&quot;. The properties can be applied to all&#xA;objects of all classes in which SwDataDefProps is aggregated." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<TaggedValues>
+					<Tag name="additionalNativeTypeQualifier" type="Classifier:additionalNativeTypeQualifier" description="This attribute is used to declare native qualifiers of the programming language which can neither be deduced from the baseType (e.g. because the data object describes a pointer) nor from other more abstract attributes. Examples are qualifiers like &quot;volatile&quot;, &quot;strict&quot; or &quot;enum&quot; of the C-language. All such declarations have to be put into one string." unit="nativedeclarationstring" values="" default=""/>
+					<Tag name="annotation" type="Classifier:annotation" description=" This aggregation allows to add annotations (yellow pads...) related to the current data object." unit="annotation" values="" default=""/>
+					<Tag name="baseType" type="Classifier:baseType" description="Base type associated with the containing data object." unit="annotation" values="" default=""/>
+					<Tag name="compuMethod" type="int" description="Computation method associated with the semantics of this data object." unit="" values="" default=""/>
+					<Tag name="dataContr" type="int" description="Data constraint for this data object." unit="" values="" default=""/>
+					<Tag name="displayFormat" type="int" description="This property describes how a number is to be rendered e.g. in documents or in a measurement and calibration system" unit="" values="" default=""/>
+					<Tag name="displayPresentation" type="int" description="" unit="" values="" default=""/>
+					<Tag name="implementationDataType" type="int" description="" unit="" values="" default=""/>
+					<Tag name="invalidValue" type="int" description="" unit="" values="" default=""/>
+					<Tag name="stepSize" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swAddrMethod" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swAlignment" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swBitRepresentation" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swCalibrationAccess" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swCalprmAxixSet" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swComparisonVariable" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swDataDependency" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swHostVariable" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swImplPolicy" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swIntendedResolution" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swInterpolationMethod" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swIsVirtual" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swPointerTargetProps" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swRecordLayout" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swRefreshTiming" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swTextProps" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swValueBlockSize" type="int" description="" unit="" values="" default=""/>
+					<Tag name="swValueBlockSizeMult" type="int" description="" unit="" values="" default=""/>
+					<Tag name="unit" type="int" description="" unit="" values="" default=""/>
+					<Tag name="valueAxisDataType" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
 		<TaggedValueTypes/>
 		<ViewDefinitions/>
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="6D083AB3-0" name="DataPrototypes" version="1.0" notes="DataPrototypes"/>
+	<Documentation id="6D083AB3-0" name="DataPrototypes" version="0.3" notes="DataPrototypes"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="applicationarrayelement" metatype="ApplicationArrayElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="applicationcompositeelementdataprototype" baseStereotypes="applicationcompositeelementdataprototype"/>
-			<Stereotype name="applicationcompositeelementdataprototype" metatype="ApplicationCompositeElementDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="dataprototype" baseStereotypes="dataprototype"/>
+			<Stereotype name="applicationcompositeelementdataprototype" metatype="ApplicationCompositeElementDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="dataprototype" baseStereotypes="dataprototype"/>
 			<Stereotype name="applicationrecordelement" metatype="ApplicationRecordElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="applicationcompositeelementdataprototype" baseStereotypes="applicationcompositeelementdataprototype">
 				<TaggedValues>
 					<Tag name="isOptional" type="boolean" description="" unit="" values="true,false" default=""/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="argumentdataprototype" metatype="ArgumentDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardataprototype" baseStereotypes="autosardataprototype"/>
-			<Stereotype name="autosardataprototype" metatype="AutosarDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="dataprototype" baseStereotypes="dataprototype"/>
-			<Stereotype name="dataprototype" metatype="DataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="arparameterinimplementationdatainstanceref" metatype="ArParameterInImplementationDataInstanceRef" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="arvariableinimplementationdatainstanceref" metatype="ArVariableInImplementationDataInstanceRef" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="autosardataprototype" metatype="AutosarDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="dataprototype" baseStereotypes="dataprototype"/>
+			<Stereotype name="autosarparameterref" metatype="AutosarParameterRef" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="autosarvariableref" metatype="AutosarVariableRef" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="dataprototype" metatype="DataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
@@ -245,14 +349,18 @@
 			</Stereotype>
 			<Stereotype name="parameterdataprototype" metatype="ParameterDataPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardataprototype" baseStereotypes="autosardataprototype"/>
 			<Stereotype name="Stereotype1" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0"/>
-			<Stereotype name="variabledataprototype" metatype="VariableDataPrototype" notes="A VariableDataPrototype represents a formalized generic piece of information that is typically mutable by the application software layer. VariableDataPrototype is used in various contexts and the specific context gives the otherwise generic VariableDataPrototype a dedicated semantics." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardataprototype" baseStereotypes="autosardataprototype"/>
+			<Stereotype name="variabledataprototype" metatype="VariableDataPrototype" notes="A VariableDataPrototype represents a formalized generic piece of information that is typically mutable by the application software layer. VariableDataPrototype is used in various contexts and the specific context gives the otherwise generic VariableDataPrototype a dedicated semantics." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardataprototype" baseStereotypes="autosardataprototype">
+				<TaggedValues>
+					<Tag name="initValue" type="Classifier:initValue" description="" unit="arrayvaluespecification" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
 		</Stereotypes>
 		<TaggedValueTypes/>
 		<ViewDefinitions/>
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="141C66B3-B" name="DataTypeMapping" version="1.0" notes="DataTypeMapping"/>
+	<Documentation id="141C66B3-B" name="DataTypeMapping" version="0.2" notes="DataTypeMapping"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="datatypemap" metatype="DataTypeMap" notes="This class represents the relationship between ApplicationDataType and its implementing AbstractImplementationDataType." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -341,7 +449,7 @@
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="09E1D680-8" name="DataTypes" version="1.0" notes="DataTypes"/>
+	<Documentation id="09E1D680-8" name="DataTypes" version="0.2" notes="DataTypes"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="abstractimplementationdatatype" metatype="AbstractImplementationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="autosardatatype" baseStereotypes="autosardatatype"/>
@@ -389,7 +497,7 @@
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="SwDataDefProps" type="Classifier:SwDataDefProps" description="" unit="SwDataDefProps" values="" default=""/>
+					<Tag name="SwDataDefProps" type="SwDataDefProps" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="implementationdatatype" metatype="ImplementationDataType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractimplementationdatatype" baseStereotypes="abstractimplementationdatatype"/>
@@ -403,13 +511,6 @@
 					<Tag name="symbol" type=" CIdentifier" description="The symbol to be used as (depending on the concrete case) either a complete replacement or a prefix." unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="SwDataDefProps" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-				<AppliesTo>
-					<Apply type="Class">
-						<Property name="isActive" value=""/>
-					</Apply>
-				</AppliesTo>
-			</Stereotype>
 			<Stereotype name="symbolicnameprops" metatype="SymbolicNameProps" notes="This meta-class can be taken to contribute to the creation of symbolic name values." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="implementationprops" baseStereotypes="implementationprops"/>
 			<Stereotype name="symbolprops" metatype="SymbolProps" notes=" This meta-class represents the ability to attach with the symbol attribute a symbolic name that is conform to C language requirements to another meta-class, e.g. AtomicSwComponentType, that is a potential subject to a name clash on the level of RTE source code." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="implementationprops" baseStereotypes="implementationprops"/>
 		</Stereotypes>
@@ -418,73 +519,22 @@
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="C8A7AA6F-3" name="GeneralTemplateClasses" version="1.0" notes="GeneralTemplateClasses"/>
+	<Documentation id="7FCC99C8-F" name="InternalBehavior" version="0.2" notes="InternalBehavior"/>
 	<Content>
 		<Stereotypes>
-			<Stereotype name="multilanguaglongname" metatype="MultilanguageLongName" notes="This meta-class represents the ability to specify a long name which acts in the role of a headline. It is&#xA;intended for human readers. Per language it should be around max 80 characters." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-				<AppliesTo>
-					<Apply type="Class">
-						<Property name="isActive" value=""/>
-					</Apply>
-				</AppliesTo>
-			</Stereotype>
-			<Stereotype name="referrable" metatype="Referrable" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-				<AppliesTo>
-					<Apply type="Class">
-						<Property name="isActive" value=""/>
-					</Apply>
-				</AppliesTo>
-			</Stereotype>
-			<Stereotype name="referencebase" metatype="ReferenceBase" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-				<AppliesTo>
-					<Apply type="Class">
-						<Property name="isActive" value=""/>
-					</Apply>
-				</AppliesTo>
-			</Stereotype>
-			<Stereotype name="packageableelement" metatype="PackageableElement" notes="This meta-class specifies the ability to be a member of an AUTOSAR package." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-				<AppliesTo>
-					<Apply type="Class">
-						<Property name="isActive" value=""/>
-					</Apply>
-				</AppliesTo>
-			</Stereotype>
-			<Stereotype name="identifiable" metatype="Identifiable" notes="Instances of this class can be referred to by their identifier (within the namespace borders). In addition to this, Identifiables are objects which contribute significantly to the overall structure of an AUTOSAR description. In particular, Identifiables might contain Identifiables." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-				<AppliesTo>
-					<Apply type="Class">
-						<Property name="isActive" value=""/>
-					</Apply>
-				</AppliesTo>
-			</Stereotype>
-			<Stereotype name="arelement" metatype="ARElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
-				<AppliesTo>
-					<Apply type="Class">
-						<Property name="isActive" value=""/>
-					</Apply>
-				</AppliesTo>
-			</Stereotype>
-			<Stereotype name="arpackage" metatype="ARPackage" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="bswinternalbehavior" metatype="BswInternalBehavior" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="internalbehavior" baseStereotypes="internalbehavior"/>
+			<Stereotype name="instantiationdatadefprops" metatype="InstantiationDataDefProps" notes="These are the particular data definition properties which&#xA;shall be applied" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="arPackage" type="Classifier:arPackage" description="" unit="arpackage" values="" default=""/>
-					<Tag name="element" type="Classifier:element" description="" unit="arelement" values="" default=""/>
-					<Tag name="referenceBase" type="Classifier:referenceBase" description="" unit="referencebase" values="" default=""/>
+					<Tag name="parameterInstance" type="Classifier:parameterInstance" description="This reference identifies the particular DataPrototype (defined in the context of a composite ParameterDataPrototype) on which the swDataDefProps shall be applied." unit="autosarparameterref" values="" default=""/>
+					<Tag name="swDataDefProps" type="Classifier:swDataDefProps" description="" unit="instantiationdatadefprops" values="" default=""/>
+					<Tag name="variableInstance" type="Classifier:variableInstance" description=" This reference identifies the particular DataPrototype (defined in the context of a composite VariableDataPrototype) on which the swDataDefProps shall be applied." unit="autosarvariableref" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-		</Stereotypes>
-		<TaggedValueTypes/>
-		<ViewDefinitions/>
-		<Metamodel/>
-	</Content>
-</UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="7FCC99C8-F" name="InternalBehavior" version="1.0" notes="InternalBehavior"/>
-	<Content>
-		<Stereotypes>
-			<Stereotype name="bswinternalbehavior" metatype="BswInternalBehavior" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="internalbehavior" baseStereotypes="internalbehavior"/>
 			<Stereotype name="internalbehavior" metatype="InternalBehavior" notes="Common base class (abstract) for the internal behavior of both software components and basic software modules/clusters." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
 				<AppliesTo>
 					<Apply type="Class">
@@ -492,17 +542,33 @@
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
+					<Tag name="constantMemory" type="Classifier:constantMemory" description="Describes a read only memory object containing characteristic value(s) implemented by this InternalBehavior.&#xA;&#xA;The shortName of ParameterDataPrototype has to be equal to the ”C’ identifier of the described constant.&#xA;&#xA;The characteristic value(s) might be shared between SwComponentPrototypes of the same SwComponentType.&#xA;&#xA;The aggregation of constantMemory is subject to variability with the purpose to support variability in the software component or module implementations. Typically different algorithms in the implementation are requiring different number of memory objects." unit="parameterdataprototype" values="" default=""/>
+					<Tag name="constantValueMapping" type="Classifier:constantValueMapping" description="Reference to the ConstantSpecificationMapping to be applied for the particular InternalBehavior" unit="compositevaluespecification" values="" default=""/>
+					<Tag name="data&gt;TypeMapping" type="int" description="" unit="" values="" default=""/>
+					<Tag name="exclusiveArea" type="int" description="" unit="" values="" default=""/>
+					<Tag name="exclusiveAreaNestingOrder" type="int" description="" unit="" values="" default=""/>
 					<Tag name="staticMemory" type="Classifier:staticMemory" description="Describes a read and writeable static memory object representing measurerment variables implemented by&#xA;this software component. The term &quot;static&quot; is used in the meaning of &quot;non-temporary&quot; and does not necessarily specify a linker encapsulation. This kind of memory is only supported if supportsMultipleInstantiation is FALSE.&#xA;&#xA;The shortName of the VariableDataPrototype has to be equal with the ”C’ identifier of the described variable.&#xA;&#xA;The aggregation of staticMemory is subject to variability&#xA;with the purpose to support variability in the software component’s implementations.&#xA;&#xA;Typically different algorithms in the implementation are requiring different number of memory objects." unit="variabledataprototype" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="swcinternalbehavior" metatype="SwcInternalBehavior" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="internalbehavior" baseStereotypes="internalbehavior"/>
+			<Stereotype name="swcinternalbehavior" metatype="SwcInternalBehavior" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="internalbehavior" baseStereotypes="internalbehavior">
+				<TaggedValues>
+					<Tag name="arTypedPerInstanceMemory" type="Classifier:arTypedPerInstanceMemory" description=" Defines an AUTOSAR typed memory-block that needs to be available for each instance of the SW-component.&#xA;This is typically only useful if supportsMultipleInstantiation&#xA;is set to &quot;true&quot; or if the component defines NVRAM access via permanent blocks.&#xA;The aggregation of arTypedPerInstanceMemory is subject&#xA;to variability with the purpose to support variability in the&#xA;software component’s implementations. Typically different&#xA;algorithms in the implementation are requiring different&#xA;number of memory objects." unit="variabledataprototype" values="" default=""/>
+					<Tag name="event" type="int" description="" unit="" values="" default=""/>
+					<Tag name="exclusiveAreaPolicy" type="int" description="" unit="" values="" default=""/>
+					<Tag name="explicitInterRunnableVariable" type="int" description="" unit="" values="" default=""/>
+					<Tag name="handleTerminationAndRestart" type="int" description="" unit="" values="" default=""/>
+					<Tag name="implicitInterRunnableVariable" type="int" description="" unit="" values="" default=""/>
+					<Tag name="includedDataTypeSet" type="int" description="" unit="" values="" default=""/>
+					<Tag name="includedModeDeclarationGroupSet" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
 		</Stereotypes>
 		<TaggedValueTypes/>
 		<ViewDefinitions/>
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="BDDD1FC8-4" name="PhyiscalSemanticsUnitGroups" version="1.0" notes="PhyiscalSemanticsUnitGroups"/>
+	<Documentation id="BDDD1FC8-4" name="PhyiscalSemanticsUnitGroups" version="0.1" notes="PhyiscalSemanticsUnitGroups"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="physicaldimension" metatype="PhysicalDimension" notes="This class represents a physical dimension. If the physical dimension of two units is identical, then a conversion between them is possible. The conversion between units is related to the definition of the physical dimension.&#xA;&#xA;Note that the equivalence of the exponents does not per se define the convertibility. For example Energy and Torque share the same exponents (Nm).&#xA;&#xA;Please note further the value of an exponent does not necessarily have to be an integer number. It is also possible that the value yields a rational number, e.g. to compute the square root of a given physical quantity. In this case the exponent value would be a rational number where the numerator value is 1 and the denominator value is 2." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -571,11 +637,16 @@
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="C324609F-7" name="PortInterface" version="1.0" notes="PortInterface"/>
+	<Documentation id="C324609F-7" name="PortInterface" version="0.2" notes="PortInterface"/>
 	<Content>
 		<Stereotypes>
-			<Stereotype name="clientserverinterface" metatype="ClientServerInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portinterface" baseStereotypes="portinterface"/>
-			<Stereotype name="datainterface" metatype="DataInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portinterface" baseStereotypes="portinterface"/>
+			<Stereotype name="clientserverinterface" metatype="ClientServerInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portinterface" baseStereotypes="portinterface">
+				<TaggedValues>
+					<Tag name="operation" type="int" description="" unit="" values="" default=""/>
+					<Tag name="possibleError" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="datainterface" metatype="DataInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portinterface" baseStereotypes="portinterface"/>
 			<Stereotype name="invalidationpolicy" metatype="InvalidationPolicy" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">
@@ -593,7 +664,7 @@
 			<Stereotype name="modeswitchinterface" metatype="ModeSwitchInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portinterface" baseStereotypes="portinterface"/>
 			<Stereotype name="nvdatainterface" metatype="NvDataInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="datainterface" baseStereotypes="datainterface"/>
 			<Stereotype name="parameterinterface" metatype="ParameterInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="datainterface" baseStereotypes="datainterface"/>
-			<Stereotype name="portinterface" metatype="PortInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="portinterface" metatype="PortInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
@@ -601,7 +672,7 @@
 				</AppliesTo>
 				<TaggedValues>
 					<Tag name="isService" type="Boolean" description="This flag is set if the PortInterface is to be used for&#xA;communication between an&#xA;• ApplicationSwComponentType or&#xA;• ServiceProxySwComponentType or&#xA;• SensorActuatorSwComponentType or&#xA;• ComplexDeviceDriverSwComponentType&#xA;• ServiceSwComponentType&#xA;• EcuAbstractionSwComponentType&#xA;and a ServiceSwComponentType (namely an AUTOSAR&#xA;Service) located on the same ECU. Otherwise the flag is&#xA;not set." unit="" values="True,False" default=""/>
-					<Tag name="serviceKind" type="ServerProvidederEnum" description="This attribute provides further details about the nature of the applied service." unit="" values="" default=""/>
+					<Tag name="serviceKind" type="enumeration" description="This attribute provides further details about the nature of the applied service." unit="" values="anyStandardized,basicSoftwareModeManager,comManager,cryptoServiceManager,defaultErrorTracer,diagnosticCommunicationManager,diagnosticEventManager,diagnosticLogAndTrace,ecuManager,functionInhibitionManager,j1939RequestManager,nonVolatileRamManager,operatingSystem,secureOnBoardCommunication,syncBaseTimeManager,vendorSpecific,watchDogManager,errorTracer,hardwareTestManager,v2xFacilitities,v2xManagement,j1939Dcm,cryptoKeyManagement,intrusionDetectionSecurityManagement" default=""/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="senderreceiverinterface" metatype="SenderReceiverInterface" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="datainterface" baseStereotypes="datainterface">
@@ -618,23 +689,32 @@
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="D068E0E1-C" name="PortPrototypes" version="1.0" notes="PortPrototypes"/>
+	<Documentation id="D068E0E1-C" name="PortPrototypes" version="0.2" notes="PortPrototypes"/>
 	<Content>
 		<Stereotypes>
-			<Stereotype name="abstractprovidedportprototype" metatype="AbstractProvidedPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portprototype" baseStereotypes="portprototype"/>
-			<Stereotype name="abstractrequiredportprototype" metatype="AbstractRequiredPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="portprototype" baseStereotypes="portprototype"/>
-			<Stereotype name="portprototype" metatype="PortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="abstractprovidedportprototype" metatype="AbstractProvidedPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portprototype" baseStereotypes="portprototype"/>
+			<Stereotype name="abstractrequiredportprototype" metatype="AbstractRequiredPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="portprototype" baseStereotypes="portprototype"/>
+			<Stereotype name="portprototype" metatype="PortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
 				<AppliesTo>
 					<Apply type="Class">
 						<Property name="isActive" value=""/>
 					</Apply>
 				</AppliesTo>
 			</Stereotype>
-			<Stereotype name="pportprototype" metatype="PPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractprovidedportprototype" baseStereotypes="abstractprovidedportprototype"/>
-			<Stereotype name="prportprototype" metatype="PRPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractprovidedportprototype" baseStereotypes="abstractprovidedportprototype abstractrequiredportprototype"/>
-			<Stereotype name="rportprototype" metatype="RPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractrequiredportprototype" baseStereotypes="abstractrequiredportprototype">
+			<Stereotype name="pportprototype" metatype="PPortPrototype" notes="Component port providing a certain port interface." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractprovidedportprototype" baseStereotypes="abstractprovidedportprototype">
+				<TaggedValues>
+					<Tag name="providedInterface" type="Classifier:providedInterface" description=" The interface that this port provides." unit="portinterface" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="prportprototype" metatype="PRPortPrototype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractprovidedportprototype" baseStereotypes="abstractprovidedportprototype abstractrequiredportprototype">
+				<TaggedValues>
+					<Tag name="providedRequiredInterface" type="Classifier:providedRequiredInterface" description="" unit="portinterface" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="rportprototype" metatype="RPortPrototype" notes="Component port requiring a certain port interface." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractrequiredportprototype" baseStereotypes="abstractrequiredportprototype">
 				<TaggedValues>
 					<Tag name="mayBeUnconnected" type="" description="" unit="" values="" default="false"/>
+					<Tag name="requiredInterface" type="Classifier:requiredInterface" description="" unit="portinterface" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
 		</Stereotypes>
@@ -651,7 +731,7 @@
 		<Metamodel/>
 	</Content>
 </UMLProfile><UMLProfile profiletype="uml2">
-	<Documentation id="73424F91-9" name="SwComponentTypes" version="1.0" notes="SwComponentTypes"/>
+	<Documentation id="73424F91-9" name="SwComponentTypes" version="0.2" notes="SwComponentTypes"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="applicationswcomponenttype" metatype=" ApplicationSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
@@ -661,7 +741,7 @@
 					<Tag name="symbolProps" type="Classifier:symbolProps" description="This represents the SymbolProps for the AtomicSwComponentType." unit="symbolprops" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="complexdevicedriverswcomponenttype" metatype="ComplexDeviceDriverSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
+			<Stereotype name="complexdevicedriverswcomponenttype" metatype="ComplexDeviceDriverSwCwomponenttype" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
 			<Stereotype name="compositionswcomponenttype" metatype="CompositionSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swcomponenttype" baseStereotypes="swcomponenttype">
 				<TaggedValues>
 					<Tag name="component" type="Classifier:component" description="" unit="swcomponentprototype" values="" default=""/>
@@ -673,7 +753,13 @@
 			</Stereotype>
 			<Stereotype name="ecuabstractionswcomponenttype" metatype="EcuAbstractionSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
 			<Stereotype name="nvblockswcomponenttype" metatype="NvBlockSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="atomicswcomponenttype" baseStereotypes="atomicswcomponenttype"/>
-			<Stereotype name="parameterswcomponenttype" metatype="ParameterSwComponentType" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swcomponenttype" baseStereotypes="swcomponenttype"/>
+			<Stereotype name="parameterswcomponenttype" metatype="ParameterSwComponentType" notes=" The ParameterSwComponentType defines parameters and characteristic values accessible via provided Ports. The provided values are the same for all connected SwComponentPrototypes" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="swcomponenttype" baseStereotypes="swcomponenttype">
+				<TaggedValues>
+					<Tag name="constantMapping" type="Classifier:constantMapping" description="" unit="constantspecificationmapping" values="" default=""/>
+					<Tag name="dataTypeMapping" type="Classifier:dataTypeMapping" description="" unit="datatypemappingset" values="" default=""/>
+					<Tag name="instantiationDataDefProps" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
 			<Stereotype name="portgroup" metatype="PortGroup" notes=" Group of ports which share a common functionality, e.g. need specific network resources. This information shall be available on the VFB level in order to delegate it properly via compositions. When propagated into the ECU extract, this information is used as input for the configuration of Services like the Communication Manager.&#xA;&#xA;A PortGroup is defined locally in a component (which can be a composition) and refers to the &quot;outer&quot; ports belonging to the group as well as to the &quot;inner&quot; groups which propagate this group into the components which are part of a composition. A PortGroup within an atomic SWC cannot be linked to inner groups." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Class">

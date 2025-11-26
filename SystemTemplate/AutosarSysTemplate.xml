@@ -1,0 +1,442 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<MDG.Technology version="1.0"><Documentation id="AR_TPS_SYS" name="AutosarSysTemplate" version="0.7" notes="AUTOSAR TPS System Template"/><UMLProfiles><UMLProfile profiletype="uml2">
+	<Documentation id="0D5CEFE5-A" name="ComFrames" version="0.2" notes="AUTOSAR_TPS_SystemTemplate, chapter 6 Communication, subchapter 6.3 Frames"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="canframe" metatype="CanFrame" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="fibexelement" baseStereotypes="fibexelement frame"/>
+			<Stereotype name="canframetriggering" metatype="CanFrameTriggering" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="frametriggering" baseStereotypes="frametriggering"/>
+			<Stereotype name="frame" metatype="Frame" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="frametriggering" metatype="FrameTriggering" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="40C00EDC-6" name="ComISignals" version="0.3" notes="AUTOSAR_TPS_SystemTemplate, chapter 6 Communication, subchapter 6.2 ISignals"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="isignal" metatype="ISignal" notes="Signal of the Interaction Layer. The RTE supports a &quot;signal fan-out&quot; where the same System Signal is sent in different SignalIPdus to multiple receivers.&#xA;&#xA;To support the RTE &quot;signal fan-out&quot; each SignalIPdu contains ISignals. If the same System Signal is to be mapped into several SignalIPdus there is one ISignal needed for each ISignalToIPduMapping.&#xA;&#xA;ISignals describe the Interface between the Precompile configured RTE and the potentially Postbuild configured Com Stack (see ECUC Parameter Mapping).&#xA;&#xA;In case of the SystemSignalGroup an ISignal shall be created for each SystemSignal contained in the SystemSignalGroup." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="fibexelement" baseStereotypes="fibexelement">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="dataTransformation" type="int" description="" unit="" values="" default=""/>
+					<Tag name="dataTypePolicy" type="enumeration" description="" unit="" values="legacy,networkRepresentationFromComSpec,override,transformingISignal" default=""/>
+					<Tag name="initValue" type="int" description="" unit="" values="" default=""/>
+					<Tag name="iSignalProps" type="int" description="" unit="" values="" default=""/>
+					<Tag name="iSignalType" type="int" description="" unit="" values="" default=""/>
+					<Tag name="length" type="int" description="" unit="" values="" default=""/>
+					<Tag name="networkRepresentationProps" type="int" description="" unit="" values="" default=""/>
+					<Tag name="systemSignal" type="int" description="" unit="" values="" default=""/>
+					<Tag name="timeoutSubstitutionValue" type="int" description="" unit="" values="" default=""/>
+					<Tag name="transformationISignalProps" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="isignalgroup" metatype="ISignalGroup" notes=" Additional ISignal properties that may be stored in different files." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="fibexelement" baseStereotypes="fibexelement">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="isignalprops" metatype="ISignalProps" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="handleOutOfRange" type="enumeration" description="" unit="" values="default,externalReplacement,ignore,invalid,none,saturate" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="isignaltoipdumapping" metatype="ISignalToIPduMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="systemsignalgroup" metatype="SystemSignalGroup" notes="A signal group refers to a set of signals that shall always be kept together. A signal group is used to guarantee the atomic transfer of AUTOSAR composite data types.&#xA;&#xA;The SystemSignalGroup defines a signal grouping on VFB level. On cluster level the Signal grouping is described by the ISignalGroup element." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="fibexelement" baseStereotypes="fibexelement">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="systemSignal" type="Classifier:systemSignal" description="Reference to a set of SystemSignals that shall always be kept together." unit="systemsignal" values="" default=""/>
+					<Tag name="transformingSystemSignal" type="Classifier:transformingSystemSignal" description="Optional reference to the SystemSignal which shall contain the transformed (linear) data." unit="systemsignal" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="1598ED1F-1" name="ComPdus" version="0.3" notes="ComPdus"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="generalpurposepdu" metatype="GeneralPurposePdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="pdu" baseStereotypes="pdu"/>
+			<Stereotype name="ipdu" metatype="IPdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="pdu" baseStereotypes="pdu"/>
+			<Stereotype name="ipdutiming" metatype="IPduTiming" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="isignalipdu" metatype="ISignalIPdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ipdu" baseStereotypes="ipdu"/>
+			<Stereotype name="isignalipdugroup" metatype="ISignalIPduGroup" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="fibexelement" baseStereotypes="fibexelement">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="communicationDirection" type="enumeration" description="" unit="" values="in,out" default=""/>
+					<Tag name="communicationMode" type="Classifier:communicationMode" description="" unit="string" values="" default=""/>
+					<Tag name="iSignalPdu" type="Classifier:iSignalPdu" description="" unit="isignalipdu" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="nmpdu" metatype="NmPdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="pdu" baseStereotypes="pdu"/>
+			<Stereotype name="pdu" metatype="Pdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="fibexelement" baseStereotypes="fibexelement">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="pdutoframemapping" metatype="PduToFrameMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="pdutriggering" metatype="PduTriggering" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="userdefinedpdu" metatype="UserDefinedPdu" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="pdu" baseStereotypes="pdu"/>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="94828435-D" name="Triggerings and Ports" version="0.2" notes="AUTOSAR_TPS_SystemTemplate, chapter 6 Communication, subchapter 6.1 Triggering and Ports"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="commconnectorport" metatype="CommConnectorPort" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="communicationDirection" type="int" description="Communication Direction of the Connector Port (input or output Port)." unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="frameport" metatype="FramePort" notes=" Connectors reception or send port on the referenced channel referenced by a FrameTriggering." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="commconnectorport" baseStereotypes="commconnectorport"/>
+			<Stereotype name="ipdport" metatype="IPduPort" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="commconnectorport" baseStereotypes="commconnectorport"/>
+			<Stereotype name="isignalport" metatype="ISignalPort" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="commconnectorport" baseStereotypes="commconnectorport"/>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="F550D61D-7" name="DataMapping" version="0.3" notes="DataMapping"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="clientservertosignalmapping" metatype="ClientServerToSignalMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="datamapping" baseStereotypes="datamapping"/>
+			<Stereotype name="datamapping" metatype="DataMapping" notes="Mapping of port elements (data elements and parameters) to frames and signals." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="senderreceivertosignalgroupmapping" metatype="SenderReceiverToSignalGroupMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="datamapping" baseStereotypes="datamapping">
+				<TaggedValues>
+					<Tag name="dataElement" type="variabledataprototype" description="" unit="" values="" default=""/>
+					<Tag name="signalGroup" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="systemsignal" metatype="SystemSignal" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="dynamicLength" type="Classifier:dynamicLength" description="" unit="boolean" values="" default=""/>
+					<Tag name="physicalProps" type="swdatadefprops" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="C8A7AA6F-3" name="GeneralClasses" version="0.1" notes="GeneralClasses"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="arelement" metatype="ARElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="arpackage" metatype="ARPackage" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="arPackage" type="Classifier:arPackage" description="" unit="arpackage" values="" default=""/>
+					<Tag name="element" type="Classifier:element" description="" unit="arelement" values="" default=""/>
+					<Tag name="referenceBase" type="Classifier:referenceBase" description="" unit="referencebase" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="fibexelement" metatype="FibexElement" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="identifiable" metatype="Identifiable" notes="Instances of this class can be referred to by their identifier (within the namespace borders). In addition to this, Identifiables are objects which contribute significantly to the overall structure of an AUTOSAR description. In particular, Identifiables might contain Identifiables." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="multilanguaglongname" metatype="MultilanguageLongName" notes="This meta-class represents the ability to specify a long name which acts in the role of a headline. It is&#xA;intended for human readers. Per language it should be around max 80 characters." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="packageableelement" metatype="PackageableElement" notes="This meta-class specifies the ability to be a member of an AUTOSAR package." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="referencebase" metatype="ReferenceBase" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="referrable" metatype="Referrable" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="0063D8A5-A" name="Mapping" version="0.2" notes="Mapping"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="systemmapping" metatype="SystemMapping" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="dataMapping" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="4B6C9E2F-4" name="System" version="0.2" notes="System"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="system" metatype="System" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="mapping" type="Classifier:mapping" description="" unit="systemmapping" values="" default=""/>
+					<Tag name="fibexElement" type="Classifier:fibexElement" description="" unit="fibexelement" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="583F39E1-F" name="TopoCanCom" version="0.3" notes="TopoCanCom"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="abstractcancluster" metatype="AbstractCanCluster" notes="Abstract class that is used to collect the common TtCAN, J1939 and CAN Cluster attributes." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="abstractcancommunicationconnector" metatype="AbstractCanCommunicationConnector" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="communicationconnector" baseStereotypes="communicationconnector"/>
+			<Stereotype name="abstractcancommunicationcontroller" metatype="AbstractCanCommunicationController" notes=" Abstract class that is used to collect the common TtCAN and CAN Controller attribute" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="communicationcontroller" baseStereotypes="communicationcontroller">
+				<TaggedValues>
+					<Tag name="canControllerAttributes" type="Classifier:canControllerAttributes" description=" CAN Bit Timing configuration" unit="abstractcancommunicationcontrollertttributes" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="abstractcancommunicationcontrollertttributes" metatype="AbstractCanCommunicationControllerAttributes" notes="For the configuration of the CanController parameters two different approaches can be used:&#xA;1. Providing exact values which are taken by the ECU developer (CanControllerConfiguration).&#xA;2. Providing ranges of values which are taken as requirements and have to be respected by the ECU developer (CanControllerConfigurationRequirements)." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="canControllerFdAttributes" type="int" description="" unit="" values="" default=""/>
+					<Tag name="canControllerFdRequirements" type="int" description="" unit="" values="" default=""/>
+					<Tag name="canControllerXlAttributes" type="int" description="" unit="" values="" default=""/>
+					<Tag name="canControllerXlRequirements" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="abstractcanphysicalchannel" metatype="AbstractCanPhysicalChannel" notes="Abstract class that is used to collect the common TtCAN and CAN PhysicalChannel attributes." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="physicalchannel" baseStereotypes="physicalchannel"/>
+			<Stereotype name="cancluster" metatype="CanCluster" notes="CAN bus specific cluster attributes." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancluster" baseStereotypes="abstractcancluster fibexelement"/>
+			<Stereotype name="cancommunicationconnector" metatype="cancommunicationconnector" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationconnector" baseStereotypes="abstractcancommunicationconnector"/>
+			<Stereotype name="cancommunicationcontroller" metatype="CanCommunicationController" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationcontroller" baseStereotypes="abstractcancommunicationcontroller"/>
+			<Stereotype name="cancontrollerconfiguration" metatype="CanControllerConfiguration" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationcontrollertttributes" baseStereotypes="abstractcancommunicationcontrollertttributes"/>
+			<Stereotype name="cancontrollerconfigurationrequirements" metatype="CanControllerConfigurationRequirements" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationcontrollertttributes" baseStereotypes="abstractcancommunicationcontrollertttributes"/>
+			<Stereotype name="cancontrollerfdconfiguration" metatype="CanControllerFdConfiguration" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationcontrollertttributes" baseStereotypes="abstractcancommunicationcontrollertttributes"/>
+			<Stereotype name="cancontrollerfdconfigurationrequirements" metatype="CanControllerFdConfigurationRequirements" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcancommunicationcontrollertttributes" baseStereotypes="abstractcancommunicationcontrollertttributes"/>
+			<Stereotype name="canphysicalchannel" metatype="CanPhysicalChannel" notes=" CAN bus specific physical channel attributes." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcanphysicalchannel" baseStereotypes="abstractcanphysicalchannel"/>
+			<Stereotype name="ttcanphysicalchannel" metatype="TtcanPhysicalChannel" notes="TTCAN bus specific physical channel attributes." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="abstractcanphysicalchannel" baseStereotypes="abstractcanphysicalchannel"/>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile><UMLProfile profiletype="uml2">
+	<Documentation id="92443175-1" name="Topology" version="0.2" notes="AUTOSAR_TPS_SystemTemplate, chapter 3 Topology"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="clientidrange" metatype="ClientIdRange" notes=" With this element it is possible to restrict the Client Identifier of the transaction handle that is generated by the client RTE for inter-Ecu Client/Server communication to an allowed range of numerical values." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="lowerLimit" type="Classifier:lowerLimit" description="This specifies the lower limit of the ClientIdRange." unit="limit" values="" default=""/>
+					<Tag name="upperLimit" type="Classifier:upperLimit" description="This specifies the upper limit of the ClientIdRange." unit="limit" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="communicationconnector" metatype="CommunicationConnector" notes="The connection between the referencing ECU and the referenced channel via the referenced controller.&#xA;Connectors are used to describe the bus interfaces of the ECUs and to specify the sending/receiving behavior. Each CommunicationConnector has a reference to exactly one communicationController.&#xA;Note: Several CommunicationConnectors can be assigned to one PhysicalChannel in the scope of one&#xA;ECU Instance." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="commController" type="Classifier:commController" description="" unit="communicationcontroller" values="" default=""/>
+					<Tag name="ecuCommPortInstance" type="Classifier:ecuCommPortInstance" description="An ECUs reception or send ports." unit="commconnectorport" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="communicationcontroller" notes="The communication controller is a dedicated hardware device by means of which hosts are sending frames to and receiving frames from the communication medium." cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="wakeUpByControllerSupported" type="Classifier:wakeUpByControllerSupported" description="Defines whether the ECU shall be woken up by this CommunicationController.&#xA;TRUE: wake up is possible&#xA;FALSE: wake up is not supported&#xA;&#xA;Note: If wakeUpByControllerSupported is set to TRUE the feature shall be supported by both hardware and basic software." unit="boolean" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ecuinstance" metatype="EcuInstance" notes="" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="fibexelement" baseStereotypes="fibexelement">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="associatedComIPduGroup" type="int" description="" unit="" values="" default=""/>
+					<Tag name="associatedConsumedProvidedServiceInstanceGroup" type="int" description="" unit="" values="" default=""/>
+					<Tag name="associatedPdurIPduGroup" type="int" description="" unit="" values="" default=""/>
+					<Tag name="clientIdRange" type="Classifier:clientIdRange" description="" unit="clientidrange" values="" default=""/>
+					<Tag name="comConfigurationGwTimeBase" type="Classifier:comConfigurationGwTimeBase" description="" unit="timevalue" values="" default=""/>
+					<Tag name="comConfigurationRxTimeBase" type="Classifier:comConfigurationRxTimeBase" description="" unit="timevalue" values="" default=""/>
+					<Tag name="comConfigurationTxTimeBase" type="Classifier:comConfigurationTxTimeBase" description="" unit="timevalue" values="" default=""/>
+					<Tag name="comEnableMDTForCyclicTransmission" type="Classifier:comEnableMDTForCyclicTransmission" description="" unit="boolean" values="" default=""/>
+					<Tag name="commController" type="Classifier:commController" description="" unit="communicationcontroller" values="" default=""/>
+					<Tag name="connector" type="Classifier:connector" description="" unit="communicationconnector" values="" default=""/>
+					<Tag name="dltConfig" type="int" description="" unit="" values="" default=""/>
+					<Tag name="doIpConfig" type="int" description="" unit="" values="" default=""/>
+					<Tag name="ecuTaskProxy" type="int" description="" unit="" values="" default=""/>
+					<Tag name="ethSwitchPortGroupDerivation" type="int" description="" unit="" values="" default=""/>
+					<Tag name="partition" type="int" description="" unit="" values="" default=""/>
+					<Tag name="pncNmRequest" type="int" description="" unit="" values="" default=""/>
+					<Tag name="pncPrepareSleepTimer" type="int" description="" unit="" values="" default=""/>
+					<Tag name="pncSynchronousWakeup" type="int" description="" unit="" values="" default=""/>
+					<Tag name="pnResetTime" type="int" description="" unit="" values="" default=""/>
+					<Tag name="sleepModeSupported" type="int" description="" unit="" values="" default=""/>
+					<Tag name="tcpIpIcmpProps" type="int" description="" unit="" values="" default=""/>
+					<Tag name="tcpIpProps" type="int" description="" unit="" values="" default=""/>
+					<Tag name="v2xSupported" type="int" description="" unit="" values="" default=""/>
+					<Tag name="wakeUpOverBusSupported" type="int" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="physicalchannel" metatype="PhysicalChannel" notes="A physical channel is the transmission medium that is used to send and receive information between communicating ECUs. Each CommunicationCluster has at least one physical channel. Bus systems like CAN and LIN only have exactly one PhysicalChannel. A FlexRay cluster may have more than one PhysicalChannels that may be used in parallel for redundant communication.&#xA;An ECU is part of a cluster if it contains at least one controller that is connected to at least one channel of the cluster.#" cx="0" cy="0" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="commConnector" type="Classifier:commConnector" description="Reference to the ECUInstance via a Communication Connector to which the channel is connected." unit="communicationconnector" values="" default=""/>
+					<Tag name="frameTriggering" type="int" description="One frame triggering is defined for exactly one channel.&#xA;Channels may have assigned an arbitrary number of&#xA;frame triggerings." unit="" values="" default=""/>
+					<Tag name="iSignalTriggering" type="int" description="One ISignalTriggering is defined for exactly one channel.&#xA;Channels may have assigned an arbitrary number of ISignaltriggerings." unit="" values="" default=""/>
+					<Tag name="managedPhysicalChannel" type="Classifier:managedPhysicalChannel" description="Reference between a channel with role managing channel and a channel with role managed channel." unit="physicalchannel" values="" default=""/>
+					<Tag name="pduTriggering" type="int" description="One PduTriggering is defined for exactly one channel.&#xA;Channels may have assigned an arbitrary number of I-Pdu triggerings." unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+		<ViewDefinitions/>
+		<Metamodel/>
+	</Content>
+</UMLProfile></UMLProfiles></MDG.Technology>
